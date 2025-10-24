@@ -264,6 +264,22 @@
       <small>© Dragon Global Wealth & Residency — Jordan. All rights reserved.</small>
     </div>
   </footer>
+<script>
+  // Slider للقصور
+  let sliderIndex = 0;
+  const sliderImages = document.querySelectorAll('.palaces-slider img');
 
+  function showNextImage() {
+    if (!sliderImages.length) return;
+    sliderImages[sliderIndex].classList.remove('active');
+    sliderIndex = (sliderIndex + 1) % sliderImages.length;
+    sliderImages[sliderIndex].classList.add('active');
+  }
+
+  if (sliderImages.length) {
+    sliderImages[0].classList.add('active');
+    setInterval(showNextImage, 3000); // كل 3 ثواني
+  }
+</script>
 </body>
 </html>
