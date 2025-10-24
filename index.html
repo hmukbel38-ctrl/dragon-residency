@@ -4,111 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dragon Global Wealth & Residency</title>
-  <meta name="description" content="Elite real estate and global residency for sovereign investors." />
+  <meta name="description" content="Elite Real Estate & Global Residency Solutions." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Top Bar -->
+
+  <!-- Top Brand -->
   <header class="topbar">
-    <div class="brand">
-      <img src="assets/Logo.PNG" alt="Dragon Crest" class="crest" />
-      <div class="brand-text">
-        <span>Dragon Global Wealth &</span>
-        <span>Residency</span>
-      </div>
+    <img class="brand-mark" src="assets/Logo.PNG" alt="Dragon Emblem" />
+    <div class="brand-name">
+      <span>Dragon Global Wealth &</span>
+      <span>Residency</span>
     </div>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#markets">Markets</a>
-      <a href="#services">Services</a>
-      <a href="#apply" class="btn btn-gold small">Apply</a>
-    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top" aria-label="Hero">
-    <div class="hero-inner">
-      <h1>Rule your capital. Command your borders.</h1>
-      <p class="tagline">Where Real Estate Becomes Power and Investors Become Sovereign.</p>
-      <a href="#apply" class="btn btn-gold">Apply for Sovereign Membership</a>
+  <!-- HERO with full-screen video -->
+  <section class="hero">
+    <div class="video-wrap">
+      <video
+        class="yacht-video-bg"
+        src="assets/assets/yachts/videos/dragon_yacht_luxury.mp4"
+        poster="assets/Logo.PNG"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1>Rule your capital.<br/>Command your borders.</h1>
+      <p>Where Real Estate Becomes Power and Investors Become Sovereign.</p>
+      <a class="cta" href="#apply">Apply for Sovereign Membership</a>
     </div>
   </section>
 
-  <!-- YACHTS VIDEO SECTION -->
-  <section class="yachts-section" id="yachts">
-    <h2 class="section-title">Luxury Yachts Experience</h2>
-    <p class="section-subtitle">Discover elite maritime assets reserved for sovereign members only.</p>
-
-    <div class="video-container">
-      <video class="yacht-video" autoplay muted loop playsinline preload="metadata">
-        <!-- إذا كان اسم الملف مختلفاً، حدّث المسار أدناه -->
-        <source src="assets/yachts/videos/33013-395456427.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <button id="soundToggle" class="btn btn-gold btn-sound" type="button" aria-pressed="false">Unmute</button>
-    </div>
+  <!-- Markets teaser -->
+  <section class="section">
+    <h2>Sovereign Markets</h2>
+    <p>Dubai • Türkiye • Cyprus • Greece • Europe</p>
   </section>
 
-  <!-- MARKETS -->
-  <section class="panels" id="markets">
-    <h2 class="section-title">Sovereign Markets</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>Dubai</h3>
-        <p>Prime freehold assets, DIFC structures, golden lifestyle.</p>
-      </article>
-      <article class="card">
-        <h3>Türkiye</h3>
-        <p>Compelling yields, dynamic citizenship and residency routes.</p>
-      </article>
-      <article class="card">
-        <h3>Cyprus</h3>
-        <p>Mediterranean luxury, EU access, strategic holdings.</p>
-      </article>
-      <article class="card">
-        <h3>Greece</h3>
-        <p>Golden Visa gateway, iconic waterfront assets.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <h2 class="section-title">Sovereign Services</h2>
-    <ul class="service-list">
-      <li>Off-market Real Estate Acquisition</li>
-      <li>Residency & Second-Home Structuring</li>
-      <li>Private Aviation & Yachting Coordination</li>
-      <li>Family Office Setup & Asset Protection</li>
-    </ul>
-  </section>
-
-  <!-- APPLY -->
-  <section class="apply" id="apply" aria-label="Apply">
-    <h2 class="section-title">Apply for Sovereign Membership</h2>
-    <p class="section-subtitle">Invitation-only. Limited allocations per market.</p>
-    <a href="mailto:membership@dragon-sovereign.com" class="btn btn-gold">Apply Now</a>
-  </section>
-
+  <!-- Footer -->
   <footer class="footer">
-    <p>© DRAGON Global Wealth & Residency</p>
-    <p>Jordan • Dubai • Türkiye • Cyprus • Greece • Europe</p>
+    <small>© DRAGON Global Wealth & Residency</small>
   </footer>
 
-  <!-- Minimal JS -->
-  <script>
-  (function(){
-    const v = document.querySelector('.yacht-video');
-    const btn = document.getElementById('soundToggle');
-    if(!v || !btn) return;
-    v.muted = true;
-    btn.addEventListener('click', ()=>{
-      v.muted = !v.muted;
-      btn.textContent = v.muted ? 'Unmute' : 'Mute';
-      btn.setAttribute('aria-pressed', String(!v.muted));
-      if (v.paused) v.play().catch(()=>{});
-    });
-  })();
-  </script>
 </body>
 </html>
