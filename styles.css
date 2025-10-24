@@ -1,4 +1,4 @@
-/* ====== Base ====== */
+/* ===== Base ===== */
 :root{
   --bg:#000; --ink:#f5f5f6; --muted:#c8c8c9;
   --gold:#d4af37; --gold2:#f0d777; --line:#1b1b1f; --panel:#0d0d10; --emer:#0fa968;
@@ -6,8 +6,8 @@
 *{box-sizing:border-box} html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:ui-serif,Georgia,Times,serif;line-height:1.6}
 
-/* ====== Nav ====== */
-.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.65);backdrop-filter:blur(8px)}
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.68);backdrop-filter:blur(8px)}
 .brand{display:flex;align-items:center;gap:10px}
 .logo{height:52px;width:auto;border-radius:8px;filter:drop-shadow(0 10px 24px rgba(212,175,55,.25))}
 .brand-name{font-size:14px;color:var(--gold);font-weight:700;letter-spacing:.2px}
@@ -16,7 +16,7 @@ body{background:var(--bg);color:var(--ink);font-family:ui-serif,Georgia,Times,se
 .btn{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:800;text-decoration:none}
 .btn-gold{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#141414;box-shadow:0 12px 30px rgba(212,175,55,.25)}
 
-/* ====== Hero ====== */
+/* ===== Hero ===== */
 .hero{position:relative;min-height:84vh;display:grid;place-items:center;overflow:hidden;background:#000}
 .bg-orb{position:absolute;inset:-30% -30% 0 -30%;
   background:
@@ -32,7 +32,7 @@ body{background:var(--bg);color:var(--ink);font-family:ui-serif,Georgia,Times,se
 .hero h1{margin:0 0 10px;font-size:40px}
 .tagline{color:var(--muted);font-size:18px;margin-bottom:16px}
 
-/* ====== Sections ====== */
+/* ===== Sections ===== */
 .section{max-width:1100px;margin:0 auto;padding:56px 18px}
 .section h2{color:var(--gold);font-size:28px;margin:0 0 12px}
 .section p{color:var(--muted)}
@@ -42,16 +42,16 @@ body{background:var(--bg);color:var(--ink);font-family:ui-serif,Georgia,Times,se
 .list{list-style:none;padding:0;margin:0}
 .list li{padding:10px 0;border-bottom:1px dashed var(--line);color:var(--muted)}
 
-/* ====== Apply ====== */
+/* ===== Apply ===== */
 .apply .form{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:12px}
 .apply input,.apply textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0f0f11;color:var(--ink)}
 .apply textarea{grid-column:1/-1}
 .apply .btn{justify-self:start}
 
-/* ====== Footer ====== */
+/* ===== Footer ===== */
 .footer{border-top:1px solid var(--line);text-align:center;padding:22px 18px;color:var(--muted)}
 
-/* ====== Responsive ====== */
+/* ===== Responsive ===== */
 @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){
   .links{display:none}
