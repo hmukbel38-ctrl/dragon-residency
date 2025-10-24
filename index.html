@@ -9,8 +9,11 @@
 </head>
 <body>
   <header class="nav">
-    <img src="assets/logo.jpeg" alt="Dragon Global Wealth & Residency – Logo" class="logo" />
-    <nav>
+    <div class="brand">
+      <img src="assets/logo.jpeg" alt="Dragon Global Wealth & Residency – Logo" class="logo" />
+      <span class="brand-name">Dragon Global Wealth & Residency</span>
+    </div>
+    <nav class="links">
       <a href="#about">About</a>
       <a href="#markets">Markets</a>
       <a href="#services">Services</a>
@@ -19,11 +22,73 @@
   </header>
 
   <section class="hero" id="top">
+    <div class="veil"></div>
     <div class="hero-inner">
-      <h1>Dragon Global Wealth & Residency</h1>
+      <h1>Rule your capital. Command your borders.</h1>
       <p class="tagline">Where Real Estate Becomes Power and Investors Become Sovereign.</p>
       <a href="#apply" class="btn-primary">Apply for Sovereign Membership</a>
     </div>
   </section>
+
+  <section class="about" id="about">
+    <h2>Official Public Manifesto</h2>
+    <p><strong>Dragon Global Wealth & Residency</strong> is a global sovereign authority engineered for one purpose: to transform investors into sovereign entities. We do not sell real estate—we convert property into power, residency into freedom, and capital into a multi-generational empire.</p>
+    <p>Operating across elite markets including <strong>Dubai</strong>, <strong>Turkey</strong>, <strong>Cyprus</strong>, and <strong>Greece</strong>, Dragon creates structured pathways for high-net-worth individuals to secure golden residencies, acquire global territory, protect wealth from economic instability, and establish financial dynasties beyond traditional systems.</p>
+    <p class="closer">This is not a company. This is the rise of a new global class. <span class="accent">Join the Sovereign Class. Become Dragon.</span></p>
+  </section>
+
+  <section class="markets" id="markets">
+    <h2>Primary Markets of Entry</h2>
+    <div class="grid">
+      <div class="card"><h3>Dubai</h3><p>Global Financial Capital. Luxury real estate and residency leverage.</p></div>
+      <div class="card"><h3>Turkey</h3><p>Geo-Strategic Citizenship Hub with property-led CBI routes.</p></div>
+      <div class="card"><h3>Cyprus</h3><p>Mediterranean Residency Gateway and asset structuring.</p></div>
+      <div class="card"><h3>Greece</h3><p>European Entry Point via Golden Visa and EU mobility.</p></div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Services Offered</h2>
+    <ul class="services-list">
+      <li><strong>Sovereign Residency & Citizenship Engineering</strong> — elite pathways to golden visas and second citizenships.</li>
+      <li><strong>Strategic Real Estate & Asset Acquisition</strong> — high-value properties in global power markets.</li>
+      <li><strong>Wealth Preservation & Asset Shielding</strong> — multi-layered protection against inflation and political risk.</li>
+      <li><strong>Private Aviation & Yacht Access Programs</strong> — jet memberships and yacht syndicates.</li>
+      <li><strong>Government Relations & Diplomatic Investment Channels</strong> — sovereign-level negotiations.</li>
+      <li><strong>Investor Sovereignty Expansion Systems</strong> — from HNWI to global sovereign entity.</li>
+    </ul>
+
+    <h3>Specialties</h3>
+    <div class="chips">
+      <span>Golden Residency Programs</span>
+      <span>Global Real Estate Sovereignty</span>
+      <span>Wealth Protection & Asset Structuring</span>
+      <span>Citizenship by Investment Systems</span>
+      <span>International Property Acquisition</span>
+      <span>Capital Expansion Strategies</span>
+    </div>
+  </section>
+
+  <section class="apply" id="apply">
+    <h2>Apply for Sovereign Membership</h2>
+    <p>Admission is selective. Submit for confidential review by the Dragon Sovereign Authority.</p>
+    <form action="mailto:membership@dragonresidency.global" method="post" enctype="text/plain">
+      <div class="form-grid">
+        <input type="text" name="full_name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone (with country code)" />
+        <input type="text" name="capital_range" placeholder="Capital Range (USD)" />
+        <textarea name="objective" rows="4" placeholder="Objective (Residency, Citizenship, Real Estate, Sovereignty)"></textarea>
+      </div>
+      <button class="btn-primary" type="submit">Submit Application</button>
+    </form>
+    <p class="hq">Headquarters of Strategic Command: <strong>Jordan</strong></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; <span id="y"></span> Dragon Global Wealth & Residency — Operated under the Dragon Sovereign Authority.</p>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
