@@ -286,35 +286,9 @@ if (palaceImages.length) {
   palaceImages[0].classList.add('on');
   setInterval(showNextPalaceImage, 3000);
 }
-// === Palace Image Slider End ===
+
 </script>
   <script>
-// =========================
-// Luxury Palaces Slider
-// =========================
-
-// Images Array from GitHub assets
-const palaceImages = [
-  'assets/estates/palaces/Palaces1.jpg',
-  'assets/estates/palaces/Palaces2.jpg',
-  'assets/estates/palaces/Palaces3.jpg',
-  'assets/estates/palaces/Palaces4.jpg',
-  'assets/estates/palaces/Palaces5.jpg'
-];
-
-let currentIndex = 0;
-const sliderContainer = document.querySelector('.palaces-fade');
-
-function showNextPalace() {
-  currentIndex = (currentIndex + 1) % palaceImages.length;
-  sliderContainer.style.backgroundImage = `url(${palaceImages[currentIndex]})`;
-}
-
-// Set default image
-sliderContainer.style.backgroundImage = `url(${palaceImages[0]})`;
-
-// Auto change every 3 seconds
-setInterval(showNextPalace, 3000);
 </script>
 </body>
 </html>
