@@ -196,3 +196,5 @@ a{text-decoration:none;color:var(--ink)}
   object-fit: cover;  /* يجعل الصورة تظهر كاملة داخل الإطار */
   display: block;
 }
+.palaces-slider img{opacity:0}
+.palaces-slider img.active{opacity:1}
