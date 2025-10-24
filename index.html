@@ -275,21 +275,34 @@
     </div>
   </footer>
 <script>
-  // Slider للقصور
-  let sliderIndex = 0;
-  const sliderImages = document.querySelectorAll('.palaces-slider img');
+(function(){
+  const slider = document.getElementById('palaces-slider');
+  if(!slider) return;
+  const track = slider.querySelector('.slides');
+  const items = track.querySelectorAll('img');
+  let i = 0, n = items.length;
 
-  function showNextImage() {
-    if (!sliderImages.length) return;
-    sliderImages[sliderIndex].classList.remove('active');
-    sliderIndex = (sliderIndex + 1) % sliderImages.length;
-    sliderImages[sliderIndex].classList.add('active');
+  function show(idx){
+    i = (idx + n) % n;
+    track.style.transform = 'translateX(-' + (i*100) + '%)';
   }
 
-  if (sliderImages.length) {
-    sliderImages[0].classList.add('active');
-    setInterval(showNextImage, 3000); // كل 3 ثواني
-  }
+  slider.querySelector('.next').onclick = () => show(i+1);
+  slider.querySelector('.prev').onclick = () => show(i-1);
+
+  // تشغيل تلقائي
+  let t = setInterval(()=>show(i+1), 4000);
+  slider.addEventListener('mouseenter', ()=>clearInterval(t));
+  slider.addEventListener('mouseleave', ()=> t = setInterval(()=>show(i+1), 4000));
+
+  // سحب بالإصبع
+  let sx = 0;
+  slider.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+  slider.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 40) dx < 0 ? show(i+1) : show(i-1);
+  });
+})();
 </script>
 </body>
 </html>
