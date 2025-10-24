@@ -240,5 +240,48 @@
       <small>© Dragon Global Wealth & Residency — Jordan. All rights reserved.</small>
     </div>
   </footer>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleries = document.querySelectorAll('.gallery');
+
+  galleries.forEach(gal => {
+    const imgs = Array.from(gal.querySelectorAll('img'));
+    if (!imgs.length) return;
+
+    let i = 0;
+    const interval = parseInt(gal.dataset.interval || '3000', 10);
+
+    // أول صورة فعّالة
+    imgs.forEach(img => img.classList.remove('active'));
+    imgs[0].classList.add('active');
+
+    // تشغيل تلقائي
+    let t = setInterval(next, interval);
+
+    function next(){
+      imgs[i].classList.remove('active');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('active');
+    }
+
+    // إيقاف مؤقت عند المرور
+    gal.addEventListener('mouseenter', () => clearInterval(t));
+    gal.addEventListener('mouseleave', () => t = setInterval(next, interval));
+    // لمس الهاتف: سحب بسيط لليمين/اليسار
+    let sx = null;
+    gal.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+    gal.addEventListener('touchend', e => {
+      if (sx == null) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40){
+        imgs[i].classList.remove('active');
+        i = dx < 0 ? (i + 1) % imgs.length : (i - 1 + imgs.length) % imgs.length;
+        imgs[i].classList.add('active');
+      }
+      sx = null;
+    }, {passive:true});
+  });
+});
+</script>
 </body>
 </html>
