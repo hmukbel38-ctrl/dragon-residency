@@ -1,132 +1,61 @@
-/* Reset and Base Styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Times New Roman", serif;
+/* ====== Base ====== */
+:root{
+  --bg:#000; --ink:#f5f5f6; --muted:#c8c8c9;
+  --gold:#d4af37; --gold2:#f0d777; --line:#1b1b1f; --panel:#0d0d10; --emer:#0fa968;
 }
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:ui-serif,Georgia,Times,serif;line-height:1.6}
 
-body {
-  background-color: #0a0a0a;
-  color: #d4af37; /* لون ذهبي ملكي */
-  line-height: 1.6;
-}
+/* ====== Nav ====== */
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.65);backdrop-filter:blur(8px)}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{height:52px;width:auto;border-radius:8px;filter:drop-shadow(0 10px 24px rgba(212,175,55,.25))}
+.brand-name{font-size:14px;color:var(--gold);font-weight:700;letter-spacing:.2px}
+.links a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+.links a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:800;text-decoration:none}
+.btn-gold{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#141414;box-shadow:0 12px 30px rgba(212,175,55,.25)}
 
-/* Logo Styling */
-.logo {
-  height: 80px;
-  width: auto;
-  margin-right: 20px;
-  transition: transform 0.3s ease-in-out;
-}
+/* ====== Hero ====== */
+.hero{position:relative;min-height:84vh;display:grid;place-items:center;overflow:hidden;background:#000}
+.bg-orb{position:absolute;inset:-30% -30% 0 -30%;
+  background:
+   radial-gradient(900px 450px at 100% 100%, rgba(212,175,55,.18), transparent 60%),
+   radial-gradient(1200px 600px at 10% -10%, rgba(15,169,104,.18), transparent 60%);
+  filter:saturate(110%);animation:float 14s ease-in-out infinite alternate}
+.bg-lines{position:absolute;inset:0;background:
+  repeating-linear-gradient(110deg,rgba(255,255,255,.04) 0 1px,transparent 1px 6px);
+  mask:linear-gradient(#000 30%,transparent)}
+@keyframes float{to{transform:translateY(-18px)}}
+.hero-inner{position:relative;text-align:center;padding:24px;max-width:980px}
+.crest{height:120px;width:auto;margin-bottom:14px;opacity:.95}
+.hero h1{margin:0 0 10px;font-size:40px}
+.tagline{color:var(--muted);font-size:18px;margin-bottom:16px}
 
-.logo:hover {
-  transform: scale(1.05);
-}
+/* ====== Sections ====== */
+.section{max-width:1100px;margin:0 auto;padding:56px 18px}
+.section h2{color:var(--gold);font-size:28px;margin:0 0 12px}
+.section p{color:var(--muted)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:10px 0;border-bottom:1px dashed var(--line);color:var(--muted)}
 
-/* Navigation Bar */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 50px;
-  background-color: #0d0d0d;
-  border-bottom: 1px solid #222;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+/* ====== Apply ====== */
+.apply .form{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:12px}
+.apply input,.apply textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0f0f11;color:var(--ink)}
+.apply textarea{grid-column:1/-1}
+.apply .btn{justify-self:start}
 
-.nav a {
-  text-decoration: none;
-  color: white;
-  margin: 0 15px;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s;
-}
+/* ====== Footer ====== */
+.footer{border-top:1px solid var(--line);text-align:center;padding:22px 18px;color:var(--muted)}
 
-.nav a:hover {
-  color: #d4af37;
-}
-
-/* CTA button */
-.cta {
-  background-color: #d4af37;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.cta:hover {
-  background-color: white;
-  color: black;
-  transform: scale(1.05);
-}
-
-/* Hero Section */
-.hero {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom right, #000000, #1a1a1a);
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #d4af37;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.hero p {
-  font-size: 20px;
-  color: white;
-  margin-bottom: 30px;
-}
-
-/* Sections */
-section {
-  padding: 80px 50px;
-  border-bottom: 1px solid #222;
-}
-
-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #d4af37;
-}
-
-section p,
-section li {
-  font-size: 18px;
-  color: #ececec;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li {
-  margin: 10px 0;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px;
-  background-color: #0d0d0d;
-  border-top: 1px solid #222;
-  color: #777;
-}
-
-footer p {
-  font-size: 14px;
-  color: #777;
+/* ====== Responsive ====== */
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){
+  .links{display:none}
+  .crest{height:96px}
+  .hero h1{font-size:30px}
+  .apply .form{grid-template-columns:1fr}
 }
