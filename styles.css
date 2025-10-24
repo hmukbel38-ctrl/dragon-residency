@@ -1,74 +1,56 @@
 :root{
+  --gold:#d4af37;
+  --gold-deep:#b8860b;
   --bg:#0a0a0a;
-  --ink:#e0c46a; /* royal gold */
-  --ink-soft:#b89a3a;
-  --ink-dark:#806c2a;
-  --wash:#111;
-  --muted:#cfcfcf;
-  --maxw:1200px;
+  --text:#f5f2e9;
 }
-
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:#fff;font-family:ui-serif, Georgia, "Times New Roman", serif}
-img{max-width:100%;display:block}
-
-/* Layout */
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 16px;background:linear-gradient(180deg,#000,rgba(0,0,0,.7));backdrop-filter:saturate(120%) blur(4px);border-bottom:1px solid rgba(255,255,255,.06)}
-.brand{display:flex;align-items:center;gap:12px}
-.crest{width:54px;height:auto;border-radius:8px;box-shadow:0 0 14px rgba(224,196,106,.25)}
-.brand-text{display:flex;flex-direction:column;line-height:1.05;font-weight:700;color:var(--ink)}
-.nav{display:flex;gap:18px;align-items:center}
-.nav a{color:#d8d8d8;text-decoration:none;font-size:.98rem}
-.nav a:hover{color:var(--ink)}
-
-.btn{display:inline-block;padding:12px 18px;border:1px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;border-radius:8px;font-weight:700}
-.btn:hover{box-shadow:0 0 18px rgba(224,196,106,.25)}
-.btn-gold{background:linear-gradient(180deg,var(--ink),var(--ink-dark));color:#000;border:none}
-.btn-gold.small{padding:8px 12px;border-radius:6px}
-
-/* Hero */
-.hero{min-height:86vh;display:grid;place-items:center;background:
-  radial-gradient(1000px 600px at 50% -10%, rgba(224,196,106,.12), transparent 60%),
-  linear-gradient(160deg,#000 0%, #0f0f0f 45%, #000 100%),
-  repeating-linear-gradient(115deg, rgba(255,255,255,.04) 0 2px, transparent 2px 10px);
-  text-align:center;padding:32px}
-.hero-inner{max-width:900px;margin:auto}
-.hero h1{font-size:clamp(2rem,5vw,4rem);margin:0 0 12px;color:var(--ink)}
-.tagline{color:#e9e9e9;opacity:.9;margin:0 0 22px}
-
-/* Sections */
-.section-title{color:var(--ink);font-size:clamp(1.6rem,3.2vw,2.4rem);margin:0 0 8px;text-align:center}
-.section-subtitle{text-align:center;color:#ddd;opacity:.9;margin:0 0 28px}
-
-.yachts-section{padding:56px 16px;background:linear-gradient(180deg,#0a0a0a,#0e0e0e)}
-.video-container{max-width:940px;margin:0 auto;position:relative;border:1px solid rgba(224,196,106,.35);border-radius:14px;overflow:hidden;box-shadow:0 0 28px rgba(224,196,106,.20)}
-.yacht-video{width:100%;height:auto;display:block;background:#000}
-.btn-sound{position:absolute;right:14px;bottom:14px;border-radius:999px;padding:10px 14px}
-
-.panels{padding:56px 16px}
-.grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:var(--wash);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px}
-.card h3{margin:0 0 8px;color:var(--ink)}
-.card p{margin:0;color:#ddd}
-
-.services{padding:56px 16px;background:#0c0c0c}
-.service-list{max-width:760px;margin:0 auto;padding-left:18px;color:#eee}
-.service-list li{margin:10px 0}
-
-.apply{padding:70px 16px;text-align:center;background:
-  radial-gradient(900px 500px at 50% -20%, rgba(224,196,106,.15), transparent 60%),
-  #0a0a0a}
-.apply .btn{margin-top:8px}
-
-.footer{padding:28px 16px;text-align:center;color:#bbb;border-top:1px solid rgba(255,255,255,.06)}
-
-/* Responsive */
-@media (max-width:900px){
-  .grid{grid-template-columns:repeat(2,1fr)}
+html,body{height:100%}
+body{
+  margin:0;background:#000;color:var(--text);
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
 }
-@media (max-width:560px){
-  .topbar{flex-wrap:wrap}
-  .grid{grid-template-columns:1fr}
-  .brand-text span{font-size:.94rem}
-  .nav{gap:12px}
+
+/* Topbar */
+.topbar{
+  position:fixed; inset:0 0 auto 0; height:72px; z-index:50;
+  display:flex; align-items:center; gap:14px;
+  padding:12px 18px; background:rgba(0,0,0,.35); backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(212,175,55,.18);
 }
+.brand-mark{width:44px;height:44px;object-fit:cover;border-radius:6px;box-shadow:0 0 18px rgba(212,175,55,.35)}
+.brand-name{line-height:1; font-weight:800; letter-spacing:.2px; color:var(--gold)}
+.brand-name span{display:block}
+
+/* HERO */
+.hero{position:relative; min-height:100svh; display:grid; place-items:center; text-align:center; overflow:hidden}
+.video-wrap{position:absolute; inset:0; z-index:0; overflow:hidden}
+.yacht-video-bg{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  filter:saturate(1.05) contrast(1.05) brightness(.9);
+}
+.video-overlay{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(60% 60% at 50% 40%, rgba(212,175,55,.12) 0%, rgba(0,0,0,.0) 45%),
+    linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.65) 60%, rgba(0,0,0,.9) 100%),
+    repeating-linear-gradient(115deg, rgba(212,175,55,.06) 0 2px, rgba(0,0,0,0) 2px 6px);
+}
+
+/* Hero content */
+.hero-content{position:relative; z-index:1; padding:96px 20px 32px; max-width:980px}
+.hero h1{margin:0 0 18px; font-size: clamp(34px, 6.2vw, 68px); color:var(--text); text-shadow:0 6px 30px rgba(0,0,0,.65)}
+.hero p{margin:0 0 28px; font-size: clamp(16px, 2.6vw, 24px); opacity:.95}
+
+.cta{
+  display:inline-block; padding:14px 22px; border-radius:999px; text-decoration:none; font-weight:800;
+  color:#000; background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-deep));
+  box-shadow:0 0 36px rgba(212,175,55,.55);
+}
+.cta:hover{filter:brightness(1.08); box-shadow:0 0 52px rgba(212,175,55,.8)}
+
+/* Section + footer */
+.section{padding:64px 20px; background:linear-gradient(180deg,rgba(0,0,0,0) 0,#050505 100%)}
+.section h2{margin:0 0 10px; font-size:clamp(24px,4.5vw,40px); color:var(--gold)}
+.section p{margin:0; opacity:.9}
+.footer{padding:26px 20px; text-align:center; background:#050505; color:#c8c1aa}
