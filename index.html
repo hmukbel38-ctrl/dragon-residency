@@ -290,5 +290,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   setInterval(showNextImage, 3000); // تغيير الصورة كل 3 ثواني
 </script>
+  <script defer>
+document.addEventListener('DOMContentLoaded', function(){
+  const imgs = document.querySelectorAll('.palaces-slider img');
+  if(!imgs.length) return;
+  let i = 0;
+  setInterval(()=>{
+    imgs[i].classList.remove('active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('active');
+  }, 3000);
+});
+</script>
 </body>
 </html>
