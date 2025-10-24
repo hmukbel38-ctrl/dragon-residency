@@ -1,140 +1,259 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dragon Global Wealth & Residency</title>
-  <meta name="description" content="شركة استشارية لبناء الثروة عبر العقار العالمي وبرامج الإقامة الاستثمارية." />
+  <meta name="description" content="Global luxury asset brokerage specializing in elite real estate, palaces, villas, yachts, private aviation, and investment residency." />
+  <link rel="preload" href="assets/Logo.PNG" as="image" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preload" href="assets/Logo.PNG" as="image">
 </head>
 <body>
-  <!-- شريط تواصل أعلى الصفحة -->
+
+  <!-- Top contact strip -->
   <div class="topbar">
-    <div class="container">
-      <div class="brand-mini">
-        <img src="assets/Logo.PNG" alt="شعار دراجون" />
+    <div class="wrap">
+      <div class="mini-brand">
+        <img src="assets/Logo.PNG" alt="Dragon Crest" />
         <span>Dragon Global Wealth & Residency</span>
       </div>
-      <div class="contacts">
-        <a href="tel:+962000000000" class="contact">+962 00 000 0000</a>
-        <a href="mailto:info@dragon-residency.com" class="contact">info@dragon-residency.com</a>
+      <div class="mini-contacts">
+        <a href="tel:+962792300213">+962792300213</a>
+        <a href="mailto:Dragonglobalwealth@gmail.com">Dragonglobalwealth@gmail.com</a>
       </div>
     </div>
   </div>
 
-  <!-- الهيدر -->
+  <!-- Header -->
   <header class="header">
-    <div class="container nav">
-      <a href="#top" class="logo">
+    <div class="wrap nav">
+      <a class="logo" href="#top" aria-label="Home">
         <img src="assets/Logo.PNG" alt="Dragon Logo" />
       </a>
-      <nav>
-        <a href="#about">من نحن</a>
-        <a href="#why">لماذا نحن</a>
-        <a href="#value">ماذا نقدم</a>
-        <a href="#contact" class="cta">تواصل معنا</a>
+      <nav class="links" aria-label="Primary">
+        <a href="#categories">Assets</a>
+        <a href="#advantage">The Dragon Advantage</a>
+        <a href="#about">About</a>
+        <a href="#markets">Markets</a>
+        <a href="#how">How It Works</a>
+        <a class="cta" href="#contact">Start Your Inquiry</a>
       </nav>
     </div>
-
-    <section class="hero" id="top">
-      <h1>نُحوِّل العقار إلى قوة والثروة إلى سيادة</h1>
-      <p>نصنع استراتيجيات ثروة متينة عبر الأصول العقارية العالمية وبرامج الإقامة الاستثمارية، مع شبكة عمليات موثوقة في الأردن وخارجها.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn">ابدأ تواصل</a>
-      </div>
-    </section>
   </header>
 
-  <!-- من نحن -->
-  <section id="about" class="section">
-    <div class="container grid-2">
-      <div>
-        <h2>من نحن</h2>
+  <!-- HERO -->
+  <main id="top">
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/Logo.PNG">
+        <source src="assets/assets/yachts/videos/dragon_yacht_luxury.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-inner">
+        <h1>Global luxury asset brokerage specializing in elite real estate, palaces, private villas, yachts, and private aviation.</h1>
+        <p>We connect investors and high-net-worth individuals with prime luxury assets across the world’s most desirable destinations.</p>
+        <a class="btn" href="#contact">Start Your Inquiry</a>
+      </div>
+    </section>
+
+    <!-- CATEGORIES (Carousel) -->
+    <section id="categories" class="section light">
+      <div class="wrap">
+        <h2>Our Luxury Asset Categories</h2>
+        <p class="intro">We specialize in the world’s most exclusive and high-value assets, connecting you directly to elite opportunities across global luxury markets.</p>
+
+        <div class="cards-scroll" role="region" aria-label="Luxury categories carousel" tabindex="0">
+          <!-- Card 1 -->
+          <article class="card item">
+            <div class="img" style="background-image:url('assets/stock/palace.jpg');"></div>
+            <h3>Private Palaces & Mega Estates</h3>
+            <p>Ultra-premium properties for sovereign living and wealth expansion.</p>
+            <a class="mini-btn" href="#contact">Inquire Now</a>
+          </article>
+          <!-- Card 2 -->
+          <article class="card item">
+            <div class="img" style="background-image:url('assets/stock/villa.jpg');"></div>
+            <h3>Luxury Villas & Waterfront Residences</h3>
+            <p>Prime villas in global hotspots with lifestyle and capital growth benefits.</p>
+            <a class="mini-btn" href="#contact">Inquire Now</a>
+          </article>
+          <!-- Card 3 -->
+          <article class="card item">
+            <div class="img" style="background-image:url('assets/stock/yacht.jpg');"></div>
+            <h3>Superyachts & Maritime Assets</h3>
+            <p>Prestige ownership and charter opportunities for ocean freedom.</p>
+            <a class="mini-btn" href="#contact">Inquire Now</a>
+          </article>
+          <!-- Card 4 -->
+          <article class="card item">
+            <div class="img" style="background-image:url('assets/stock/jet.jpg');"></div>
+            <h3>Private Jets & Aviation Assets</h3>
+            <p>Exclusive access to private aircraft acquisition and strategic mobility.</p>
+            <a class="mini-btn" href="#contact">Inquire Now</a>
+          </article>
+          <!-- Card 5 -->
+          <article class="card item">
+            <div class="img" style="background-image:url('assets/stock/residency.jpg');"></div>
+            <h3>Investment Residency & Global Citizenship</h3>
+            <p>Strategic real-estate routes to residency, protection, and mobility.</p>
+            <a class="mini-btn" href="#contact">Inquire Now</a>
+          </article>
+          <!-- Card 6 -->
+          <article class="card item">
+            <div class="img" style="background-image:url('assets/stock/island.jpg');"></div>
+            <h3>Private Islands & Ultra-Rare Assets</h3>
+            <p>Unique trophy assets for legacy ownership and elite status.</p>
+            <a class="mini-btn" href="#contact">Inquire Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVANTAGE -->
+    <section id="advantage" class="section">
+      <div class="wrap">
+        <h2>The Dragon Advantage</h2>
+        <p class="lead">We are not here to sell you an investment — we are here to restructure your financial destiny. Choosing Dragon is not convenience; it is a declaration of sovereignty.</p>
+
+        <div class="adv-grid">
+          <div class="adv">
+            <div class="ico">👑</div>
+            <h3>Capital Sovereignty</h3>
+            <p>Structures that transcend borders, inflation, and government dependency.</p>
+          </div>
+          <div class="adv">
+            <div class="ico">🏰</div>
+            <h3>Strategic Real Estate Power</h3>
+            <p>Assets selected for positioning and appreciation, not lifestyle alone.</p>
+          </div>
+          <div class="adv">
+            <div class="ico">🌐</div>
+            <h3>Global Mobility & Residency</h3>
+            <p>Access to residency and citizenship via investment in prime markets.</p>
+          </div>
+          <div class="adv">
+            <div class="ico">🛥️</div>
+            <h3>Luxury Asset Access</h3>
+            <p>Direct acquisition of superyachts, private jets, and villa portfolios.</p>
+          </div>
+          <div class="adv">
+            <div class="ico">🛡️</div>
+            <h3>Protected Growth</h3>
+            <p>Built-in exits, legal structuring, and downside risk management.</p>
+          </div>
+          <div class="adv">
+            <div class="ico">∞</div>
+            <h3>Legacy & Dynasty</h3>
+            <p>We build multigenerational influence, not short-term wins.</p>
+          </div>
+          <div class="adv">
+            <div class="ico">🔐</div>
+            <h3>Off-Market Access</h3>
+            <p>Private channels to assets never listed on public platforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section light">
+      <div class="wrap">
+        <h2>About Dragon</h2>
+        <p class="lead">
+          Dragon Global Wealth & Residency is a sovereign luxury brokerage and strategic advisory specializing in elite real estate, private palaces, waterfront villas, superyachts, and private aviation. Founded in Jordan with a global mandate, Dragon is built to become the leading authority for luxury asset acquisition and sovereign residency worldwide.
+        </p>
         <p>
-          Dragon Global Wealth & Residency شركة استشارية تُصمّم خطط بناء ثروة عبر
-          فرص عقارية مختارة وبرامج إقامة تُعزّز حرية الحركة للأفراد ذوي الملاءة.
-          نعمل بأسلوب شفاف ومنضبط ونوفّر إدارة تنفيذية من التقييم حتى الإغلاق.
+          Our mission is to empower HNWIs with direct access to exclusive, off-market opportunities across Dubai, Turkey, Greece, Cyprus, Europe, and strategic international markets — expanding into private islands, hotel portfolios, and sovereign wealth channels. We do not sell luxury — we facilitate power, mobility, and long-term global dominance.
         </p>
       </div>
-      <ul class="bullets">
-        <li>انتقاء أصول عقارية عالية الجودة</li>
-        <li>هيكلة صفقات وتحليل عوائد ومخاطر</li>
-        <li>دعم قانوني ولوجستي لبرامج الإقامة</li>
-        <li>تقارير أداء ومتابعة ما بعد الشراء</li>
-      </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- لماذا نحن -->
-  <section id="why" class="section dark">
-    <div class="container">
-      <h2>لماذا تختارنا</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>فلترة صارمة</h3>
-          <p>نسبة قبول منخفضة للفرص. التركيز على الجودة قبل الحجم.</p>
-        </div>
-        <div class="card">
-          <h3>مواءمة مصالح</h3>
-          <p>هيكل أتعاب واضح قائم على النتائج دون تعارضات خفية.</p>
-        </div>
-        <div class="card">
-          <h3>تنفيذ سريع</h3>
-          <p>شبكة شركاء موثوقين تُسرّع التقييم، العناية الواجبة، والإغلاق.</p>
-        </div>
-        <div class="card">
-          <h3>حماية رأس المال</h3>
-          <p>تركيز على المخاطر الهبوطية وخطط خروج متعددة.</p>
+    <!-- MARKETS -->
+    <section id="markets" class="section">
+      <div class="wrap">
+        <h2>Global Markets We Operate In</h2>
+        <div class="markets">
+          <article><h3>🇦🇪 Dubai, UAE</h3><p>Luxury real estate hub with tax-efficient wealth and investor residency.</p></article>
+          <article><h3>🇹🇷 Turkey</h3><p>Citizenship-by-investment through prime real-estate acquisitions.</p></article>
+          <article><h3>🇨🇾 Cyprus</h3><p>Prestigious residency and EU-lifestyle access via property investment.</p></article>
+          <article><h3>🇬🇷 Greece</h3><p>Golden Visa with waterfront properties and rental-income potential.</p></article>
+          <article><h3>🇪🇺 European Prime</h3><p>Elite programs in Spain, Portugal, and Malta for mobility and wealth.</p></article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ماذا نقدّم -->
-  <section id="value" class="section">
-    <div class="container grid-2">
-      <div>
-        <h2>قيمة واضحة اليوم</h2>
-        <p>
-          حالياً نقدّم استشارة تعريفية مجانية لتقييم أهدافك، ثم خريطة طريق
-          مبدئية تشمل القطاعات والدول المناسبة وخيارات الإقامة إن لزم.
-          لاحقاً سنعرض المنتجات والعروض والأسعار داخل الموقع.
-        </p>
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section light">
+      <div class="wrap">
+        <h2>How It Works</h2>
+        <ol class="steps">
+          <li><strong>Submit Your Inquiry:</strong> Choose asset category or residency track and connect with our team.</li>
+          <li><strong>Strategic Consultation:</strong> Align goals, capital, and positioning to identify the right pathway.</li>
+          <li><strong>Selection & Due Diligence:</strong> Tailored access to exclusive, off-market assets.</li>
+          <li><strong>Acquisition & Transfer:</strong> Negotiation, legal structuring, and secure ownership transfer.</li>
+          <li><strong>Post-Acquisition Support:</strong> Management, yields, resale strategy, or residency transition.</li>
+        </ol>
       </div>
-      <div class="highlights">
-        <div class="highlight"><span>1</span> جلسة اكتشاف واستراتيجية</div>
-        <div class="highlight"><span>2</span> ترشيحات مبدئية للأصول</div>
-        <div class="highlight"><span>3</span> مسارات إقامة/جنسية استثمارية</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- تواصل -->
-  <section id="contact" class="section dark">
-    <div class="container contact-box">
-      <h2>تواصل معنا</h2>
-      <p>أرسل رسالة قصيرة وسنعاودك بموعد استشارة.</p>
-      <div class="contact-actions">
-        <a href="tel:+962000000000" class="btn outline">اتصال مباشر</a>
-        <a href="mailto:info@dragon-residency.com?subject=استشارة" class="btn">إيميل</a>
-      </div>
-      <div class="mini-contacts">
-        <span>الهاتف: +962 00 000 0000</span>
-        <span>البريد: info@dragon-residency.com</span>
-      </div>
-    </div>
-  </section>
+    <!-- CONTACT / APPLICATION -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2>Begin Your Private Access Request</h2>
+        <p class="lead">Complete the form to begin your application for asset acquisition, strategic residency, or global investment opportunities. Our advisory team will contact you privately.</p>
 
-  <!-- الفوتر -->
+        <form class="form" method="post" action="mailto:Dragonglobalwealth@gmail.com" enctype="text/plain">
+          <div class="grid-2">
+            <label>Full Name<input type="text" name="Full Name" required></label>
+            <label>Country of Residence<input type="text" name="Country" required></label>
+            <label>Preferred Asset Type
+              <select name="Asset Type" required>
+                <option>Palaces</option>
+                <option>Villas</option>
+                <option>Yachts</option>
+                <option>Private Jets</option>
+                <option>Residency Program</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Capital Range
+              <select name="Capital Range" required>
+                <option>250k–500k</option>
+                <option>500k–1M</option>
+                <option>1M–5M</option>
+                <option>5M+</option>
+              </select>
+            </label>
+            <label>Contact Method
+              <select name="Contact Method" required>
+                <option>WhatsApp</option>
+                <option>Email</option>
+                <option>Phone Call</option>
+              </select>
+            </label>
+            <label>Phone or Email<input type="text" name="Contact" required></label>
+          </div>
+          <label>Message (Optional)<textarea name="Message" rows="4" placeholder="Share objectives, target market, or timeline…"></textarea></label>
+          <button type="submit" class="btn wide">Submit Private Request</button>
+        </form>
+
+        <div class="direct">
+          <p><strong>Or Contact Us Directly</strong></p>
+          <p><a href="tel:+962792300213">+962792300213</a> · <a href="mailto:Dragonglobalwealth@gmail.com">Dragonglobalwealth@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="brand-mini">
-        <img src="assets/Logo.PNG" alt="شعار دراجون" />
+    <div class="wrap foot">
+      <div class="mini-brand">
+        <img src="assets/Logo.PNG" alt="Dragon Crest" />
         <span>Dragon Global Wealth & Residency</span>
       </div>
-      <small>© جميع الحقوق محفوظة. الأردن.</small>
+      <small>© Dragon Global Wealth & Residency — Jordan. All rights reserved.</small>
     </div>
   </footer>
+
 </body>
 </html>
