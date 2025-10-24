@@ -284,5 +284,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+  <script>
+  let currentIndex = 0;
+  const palaceImages = document.querySelectorAll('.palaces-slider img');
+  function showNextImage() {
+    palaceImages[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % palaceImages.length;
+    palaceImages[currentIndex].classList.add('active');
+  }
+  setInterval(showNextImage, 3000); // تغيير الصورة كل 3 ثواني
+</script>
 </body>
 </html>
