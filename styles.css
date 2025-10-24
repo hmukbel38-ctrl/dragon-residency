@@ -146,17 +146,7 @@ a{text-decoration:none;color:var(--ink)}
   background: #111;
   box-shadow: inset 0 0 0 1px rgba(255,215,130,.2);
 }
-.card .gallery img{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 900ms ease;
-  user-select: none;
-  pointer-events: none;
-}
+
 /* === Image Slider Styling === */
 .palaces-slider {
   width: 100%;
@@ -167,16 +157,27 @@ a{text-decoration:none;color:var(--ink)}
   background: #f9f9f9; /* خلفية خفيفة في حال الصورة ما ظهرت */
 }
 
-.palaces-slider img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
+
 
 .palaces-slider img.active {
   opacity: 1;
 }
 .card .gallery img.active{ opacity: 1; }
+.palaces-slider{
+  width:100%;
+  height:200px;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  background:#f9f9f9;
+}
+.palaces-slider img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+.palaces-slider img.active{ opacity:1; }
