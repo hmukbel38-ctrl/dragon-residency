@@ -1,46 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dragon Global Wealth & Residency</title>
+  <meta name="description" content="شركة استشارية لبناء الثروة عبر العقار العالمي وبرامج الإقامة الاستثمارية." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="assets/Logo.PNG" as="image">
 </head>
 <body>
+  <!-- شريط تواصل أعلى الصفحة -->
+  <div class="topbar">
+    <div class="container">
+      <div class="brand-mini">
+        <img src="assets/Logo.PNG" alt="شعار دراجون" />
+        <span>Dragon Global Wealth & Residency</span>
+      </div>
+      <div class="contacts">
+        <a href="tel:+962000000000" class="contact">+962 00 000 0000</a>
+        <a href="mailto:info@dragon-residency.com" class="contact">info@dragon-residency.com</a>
+      </div>
+    </div>
+  </div>
 
-  <!-- Header -->
+  <!-- الهيدر -->
   <header class="header">
-    <img src="assets/Logo.PNG" class="logo" alt="Dragon Logo">
-    <nav class="nav">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Markets</a>
-      <a href="#" class="btn-apply">Apply</a>
-    </nav>
+    <div class="container nav">
+      <a href="#top" class="logo">
+        <img src="assets/Logo.PNG" alt="Dragon Logo" />
+      </a>
+      <nav>
+        <a href="#about">من نحن</a>
+        <a href="#why">لماذا نحن</a>
+        <a href="#value">ماذا نقدم</a>
+        <a href="#contact" class="cta">تواصل معنا</a>
+      </nav>
+    </div>
+
+    <section class="hero" id="top">
+      <h1>نُحوِّل العقار إلى قوة والثروة إلى سيادة</h1>
+      <p>نصنع استراتيجيات ثروة متينة عبر الأصول العقارية العالمية وبرامج الإقامة الاستثمارية، مع شبكة عمليات موثوقة في الأردن وخارجها.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">ابدأ تواصل</a>
+      </div>
+    </section>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="assets/Logo.PNG" class="hero-logo" alt="Dragon Logo">
-    <h1>Rule your capital.<br>Command your borders.</h1>
-    <p class="hero-subtitle">Where Real Estate Becomes Power and Investors Become Sovereign.</p>
-    <button class="btn-main">Apply for Sovereign Membership</button>
-  </section>
-
-  <!-- Yacht Video Section -->
-  <section class="yacht-section">
-    <h2>Luxury Yachts Experience</h2>
-    <p class="section-desc">Discover elite maritime assets reserved for sovereign members only.</p>
-
-    <div class="video-container">
-      <video src="assets/assets/yachts/videos/dragon_yacht_luxury.mp4" autoplay muted loop playsinline></video>
+  <!-- من نحن -->
+  <section id="about" class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>من نحن</h2>
+        <p>
+          Dragon Global Wealth & Residency شركة استشارية تُصمّم خطط بناء ثروة عبر
+          فرص عقارية مختارة وبرامج إقامة تُعزّز حرية الحركة للأفراد ذوي الملاءة.
+          نعمل بأسلوب شفاف ومنضبط ونوفّر إدارة تنفيذية من التقييم حتى الإغلاق.
+        </p>
+      </div>
+      <ul class="bullets">
+        <li>انتقاء أصول عقارية عالية الجودة</li>
+        <li>هيكلة صفقات وتحليل عوائد ومخاطر</li>
+        <li>دعم قانوني ولوجستي لبرامج الإقامة</li>
+        <li>تقارير أداء ومتابعة ما بعد الشراء</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Dragon Global Wealth & Residency - All Rights Reserved</p>
-  </footer>
+  <!-- لماذا نحن -->
+  <section id="why" class="section dark">
+    <div class="container">
+      <h2>لماذا تختارنا</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>فلترة صارمة</h3>
+          <p>نسبة قبول منخفضة للفرص. التركيز على الجودة قبل الحجم.</p>
+        </div>
+        <div class="card">
+          <h3>مواءمة مصالح</h3>
+          <p>هيكل أتعاب واضح قائم على النتائج دون تعارضات خفية.</p>
+        </div>
+        <div class="card">
+          <h3>تنفيذ سريع</h3>
+          <p>شبكة شركاء موثوقين تُسرّع التقييم، العناية الواجبة، والإغلاق.</p>
+        </div>
+        <div class="card">
+          <h3>حماية رأس المال</h3>
+          <p>تركيز على المخاطر الهبوطية وخطط خروج متعددة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ماذا نقدّم -->
+  <section id="value" class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>قيمة واضحة اليوم</h2>
+        <p>
+          حالياً نقدّم استشارة تعريفية مجانية لتقييم أهدافك، ثم خريطة طريق
+          مبدئية تشمل القطاعات والدول المناسبة وخيارات الإقامة إن لزم.
+          لاحقاً سنعرض المنتجات والعروض والأسعار داخل الموقع.
+        </p>
+      </div>
+      <div class="highlights">
+        <div class="highlight"><span>1</span> جلسة اكتشاف واستراتيجية</div>
+        <div class="highlight"><span>2</span> ترشيحات مبدئية للأصول</div>
+        <div class="highlight"><span>3</span> مسارات إقامة/جنسية استثمارية</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- تواصل -->
+  <section id="contact" class="section dark">
+    <div class="container contact-box">
+      <h2>تواصل معنا</h2>
+      <p>أرسل رسالة قصيرة وسنعاودك بموعد استشارة.</p>
+      <div class="contact-actions">
+        <a href="tel:+962000000000" class="btn outline">اتصال مباشر</a>
+        <a href="mailto:info@dragon-residency.com?subject=استشارة" class="btn">إيميل</a>
+      </div>
+      <div class="mini-contacts">
+        <span>الهاتف: +962 00 000 0000</span>
+        <span>البريد: info@dragon-residency.com</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand-mini">
+        <img src="assets/Logo.PNG" alt="شعار دراجون" />
+        <span>Dragon Global Wealth & Residency</span>
+      </div>
+      <small>© جميع الحقوق محفوظة. الأردن.</small>
+    </div>
+  </footer>
 </body>
 </html>
