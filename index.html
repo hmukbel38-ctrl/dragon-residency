@@ -444,5 +444,54 @@ document.addEventListener('DOMContentLoaded', () => {
     <button id="aiSend" class="btn btn--primary" style="width:100%">Send Private Brief</button>
   </div>
 </div>
+  <button id="aiBtn" type="button" class="ai-btn">🜲 AI Private Advisor</button>
+
+<div id="aiPanel" class="ai-panel" aria-hidden="true">
+  <div class="ai-head">
+    <strong>AI Private Advisor</strong>
+    <button id="aiClose" type="button" style="background:none;border:0;color:#fff;cursor:pointer">✕</button>
+  </div>
+  <div class="ai-body">
+    <div class="ai-row"><input id="aiName" placeholder="Full Name"></div>
+    <div class="ai-row">
+      <select id="aiNeed">
+        <option>Residency by Investment</option><option>Ultra Luxury Real Estate</option>
+        <option>Superyachts</option><option>Private Jets</option>
+      </select>
+    </div>
+    <div class="ai-row"><select id="aiCap"><option>250k–500k</option><option>500k–1M</option><option>1M–3M</option><option>3M+</option></select></div>
+    <div class="ai-row"><input id="aiContact" placeholder="WhatsApp or Email"></div>
+    <div class="ai-row"><textarea id="aiMsg" rows="3" placeholder="Brief goals (optional)"></textarea></div>
+  </div>
+  <div class="ai-foot" style="padding:10px;border-top:1px solid #eee">
+    <button id="aiSend" type="button" class="btn btn--primary" style="width:100%">Send Private Brief</button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const btn=document.getElementById('aiBtn');
+  const panel=document.getElementById('aiPanel');
+  const x=document.getElementById('aiClose');
+  const send=document.getElementById('aiSend');
+
+  if(!btn||!panel) return;
+
+  const open=()=>{panel.style.display='flex';panel.setAttribute('aria-hidden','false');};
+  const close=()=>{panel.style.display='none';panel.setAttribute('aria-hidden','true');};
+
+  btn.addEventListener('click',open);
+  x.addEventListener('click',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') close();});
+
+  send.addEventListener('click',()=>{
+    const t=encodeURIComponent(
+      `AI BRIEF\nName: ${aiName.value||''}\nNeed: ${aiNeed.value}\nCapital: ${aiCap.value}\nContact: ${aiContact.value||''}\nMsg: ${aiMsg.value||''}`
+    );
+    window.open(`https://wa.me/962792300213?text=${t}`,'_blank');
+    close();
+  });
+});
+</script>
 </body>
 </html>
