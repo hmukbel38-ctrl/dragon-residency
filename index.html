@@ -676,5 +676,15 @@ window.googleTranslateElementInit=function(){
   });
 })();
 </script>
+  <button class="lang-fab" id="langFab" type="button">🌐 Language</button>
+
+<div class="lang-panel" id="langPanel" aria-hidden="true">
+  <button class="lang-close" id="langClose" title="Close">✕</button>
+  <strong style="margin-bottom:6px;display:block">Choose Language</strong>
+  <div id="google_translate_element" style="height:0;overflow:hidden"></div>
+  <button type="button" data-lang="en">English</button>
+  <button type="button" data-lang="ar">العربية</button>
+  <button type="button" data-lang="zh-CN">中文 (简体)</button>
+</div>
 </body>
 </html>
