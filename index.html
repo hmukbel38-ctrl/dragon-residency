@@ -300,5 +300,53 @@ document.addEventListener('DOMContentLoaded', function(){
   }, 3000);
 });
 </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.palaces-slider');
+  if (!slider) return;
+
+  const imgs = Array.from(slider.querySelectorAll('img'));
+  if (!imgs.length) return;
+
+  const titleEl = slider.closest('article').querySelector('.asset-title');
+
+  let i = 0;
+
+  // تهيئة
+  imgs.forEach(img => img.classList.remove('active'));
+  imgs[0].classList.add('active');
+  if (titleEl) titleEl.textContent = imgs[0].dataset.title || titleEl.textContent;
+
+  let t = setInterval(next, 3000);
+
+  function next() {
+    imgs[i].classList.remove('active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('active');
+    if (titleEl && imgs[i].dataset.title) titleEl.textContent = imgs[i].dataset.title;
+  }
+
+  // إيقاف عند المرور
+  slider.addEventListener('mouseenter', () => { clearInterval(t); });
+  slider.addEventListener('mouseleave', () => { t = setInterval(next, 3000); });
+
+  // سحب لمسة للهاتف
+  let sx = null;
+  slider.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+  slider.addEventListener('touchmove', e => {
+    if (sx === null) return;
+    const dx = e.touches[0].clientX - sx;
+    if (Math.abs(dx) > 40) {
+      clearInterval(t);
+      imgs[i].classList.remove('active');
+      i = dx < 0 ? (i + 1) % imgs.length : (i - 1 + imgs.length) % imgs.length;
+      imgs[i].classList.add('active');
+      if (titleEl && imgs[i].dataset.title) titleEl.textContent = imgs[i].dataset.title;
+      t = setInterval(next, 3000);
+      sx = null;
+    }
+  }, {passive:true});
+});
+</script>
 </body>
 </html>
