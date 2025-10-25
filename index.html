@@ -43,24 +43,26 @@
 
   <!-- HERO -->
  <!-- TOP VIDEO BANNER -->
-<section class="video-banner" aria-label="Top Video Banner">
-  <video class="banner-video" autoplay muted loop playsinline preload="metadata"
-         poster="assets/Logo.PNG" style="width:100%;height:550px;object-fit:cover;background:#000;display:block">
-    <source src="assets/assets/yachts/videos/dragon_yacht_luxury.mp4?v=4" type="video/mp4">
+<section class="video-banner" aria-label="Top">
+  <video id="heroVideo" class="banner-video" autoplay muted loop playsinline preload="metadata"
+         poster="assets/Logo.PNG">
+    <source src="assets/yachts/videos/dragon_yacht_luxury.mp4?v=20" type="video/mp4">
   </video>
   <div class="banner-overlay"></div>
-</section>
-    <!-- Overlay to enhance text visibility -->
-    <div class="video-banner__overlay"></div>
 
-    <!-- Text on top -->
-    <div class="video-banner__content">
-      <h1 class="video-banner__title">Global Wealth. Golden Residency. Elite Access.</h1>
-      <p class="video-banner__sub">Advisory for Sovereign Investors in Real Estate, Aviation, Yachts & Residency.</p>
-      <div class="video-banner__cta">
-        <a href="#categories" class="btn btn--primary">Explore Prime Assets</a>
-        <a href="#contact" class="btn btn--outline">Request Private Brief</a>
-      </div>
+  <div class="video-banner__content wrap">
+    <span class="badge">Jordan HQ • Dubai Division</span>
+    <h1 id="t-hero" class="video-banner__title">Global Wealth. Golden Residency. Elite Access.</h1>
+    <p id="t-sub" class="video-banner__sub">Advisory for sovereign investors in real estate, aviation, yachts, and residency.</p>
+    <div>
+      <a href="#categories" class="btn btn--primary">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
+        <span id="t-explore">Explore Prime Assets</span>
+      </a>
+      <a href="#contact" class="btn btn--outline" style="margin-inline-start:8px">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m18 0-7.8 5.2a2 2 0 0 1-2.4 0L3 8" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/></svg>
+        <span id="t-brief">Request Private Brief</span>
+      </a>
     </div>
   </div>
 </section>
