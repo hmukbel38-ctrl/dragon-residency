@@ -610,5 +610,17 @@ function DG_sendAI(){
   });
 })();
 </script>
+  <script>
+(function(){
+  const v=document.getElementById('heroVideo'); if(!v) return;
+  v.muted=true; v.playsInline=true;
+  const tryPlay=()=>v.play().catch(()=>{});
+  v.addEventListener('loadeddata',tryPlay,{once:true});
+  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) tryPlay(); });
+  ['touchstart','click','scroll'].forEach(ev=>window.addEventListener(ev,tryPlay,{once:true,passive:true}));
+  // إعادة تشغيل لو توقف
+  v.addEventListener('pause',()=>{ if(!v.ended) tryPlay(); });
+})();
+</script>
 </body>
 </html>
