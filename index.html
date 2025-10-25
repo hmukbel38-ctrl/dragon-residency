@@ -556,5 +556,59 @@ function DG_sendAI(){
   DG_closeAI();
 }
 </script>
+  <script>
+(function(){
+  const form = document.getElementById('dgForm');
+  if(!form) return;
+
+  const steps = [...form.querySelectorAll('.step')];
+  const dots  = [...form.querySelectorAll('.dot')];
+  let i = 0;
+
+  const show = (idx)=>{
+    steps.forEach((s,k)=>s.classList.toggle('is-active',k===idx));
+    dots.forEach((d,k)=>d.classList.toggle('active',k===idx));
+    i = idx;
+    // scroll to form top for mobile
+    form.scrollIntoView({behavior:'smooth', block:'start'});
+  };
+
+  const validateStep = ()=>{
+    // تحقّق من الحقول المطلوبة في الخطوة الحالية فقط
+    const req = [...steps[i].querySelectorAll('[required]')];
+    for(const el of req){
+      if(!el.value || (el.type==='select-one' && !el.value.trim())){ el.focus(); return false; }
+    }
+    return true;
+  };
+
+  form.addEventListener('click', (e)=>{
+    if(e.target.matches('[data-next]')){
+      if(!validateStep()) return;
+      show(Math.min(i+1, steps.length-1));
+    }
+    if(e.target.matches('[data-prev]')){
+      show(Math.max(i-1, 0));
+    }
+  });
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    // اجمع البيانات وأرسلها للواتساب
+    const data = Object.fromEntries(new FormData(form).entries());
+    const text = encodeURIComponent(
+      `DRAGON ACCESS REQUEST`
+      +`\nAsset: ${data.asset}`
+      +`\nCapital: ${data.capital}`
+      +`\nName: ${data.name}`
+      +`\nCountry: ${data.country}`
+      +`\nMethod: ${data.method}`
+      +`\nContact: ${data.contact}`
+      +`\nMessage: ${data.msg||''}`
+    );
+    window.open(`https://wa.me/962792300213?text=${text}`, '_blank');
+  });
+})();
+</script>
 </body>
 </html>
