@@ -230,51 +230,69 @@
     <h2>Begin Your Private Access Request</h2>
 
     <form id="dgForm" class="form-steps" novalidate>
-      <!-- Step 1 -->
-      <div class="step is-active">
+      <!-- STEP 1: Interest -->
+      <div class="step is-active" data-step="1">
         <label>Preferred Asset Type</label>
-        <select name="asset">
-          <option>Palaces</option><option>Villas</option><option>Private Islands</option>
-          <option>Superyachts</option><option>Private Jets</option><option>Residency by Investment</option>
+        <select name="asset" required>
+          <option>Residency by Investment</option>
+          <option>Ultra Luxury Real Estate</option>
+          <option>Private Islands</option>
+          <option>Superyachts</option>
+          <option>Private Jets</option>
         </select>
-        <label>Capital Range</label>
-        <select name="capital">
-          <option>250k–500k</option><option>500k–1M</option><option>1M–3M</option><option>3M+</option>
+
+        <label style="margin-top:10px">Capital Range</label>
+        <select name="capital" required>
+          <option>250k–500k</option>
+          <option>500k–1M</option>
+          <option>1M–3M</option>
+          <option>3M+</option>
         </select>
-        <div style="margin-top:12px">
+
+        <div style="margin-top:14px">
           <button type="button" class="btn btn--primary" data-next>Next</button>
         </div>
       </div>
 
-      <!-- Step 2 -->
-      <div class="step">
-        <label>Full Name</label><input class="input" name="name" required>
-        <label>Country of Residence</label><input class="input" name="country" required>
-        <label>Preferred Contact</label>
-        <select name="method"><option>WhatsApp</option><option>Email</option><option>Phone</option></select>
-        <div style="margin-top:12px;display:flex;gap:8px">
+      <!-- STEP 2: Identity -->
+      <div class="step" data-step="2">
+        <label>Full Name</label>
+        <input class="input" name="name" required>
+        <label>Country of Residence</label>
+        <input class="input" name="country" required>
+
+        <div style="margin-top:14px;display:flex;gap:8px">
           <button type="button" class="btn btn--outline" data-prev>Back</button>
           <button type="button" class="btn btn--primary" data-next>Next</button>
         </div>
       </div>
 
-      <!-- Step 3 -->
-      <div class="step">
-        <label>Phone or Email</label><input class="input" name="contact" required>
-        <label>Message (Optional)</label><textarea class="input" name="msg" rows="4"></textarea>
-        <div style="margin-top:12px;display:flex;gap:8px">
+      <!-- STEP 3: Contact -->
+      <div class="step" data-step="3">
+        <label>Preferred Contact</label>
+        <select name="method">
+          <option>WhatsApp</option><option>Email</option><option>Phone</option>
+        </select>
+
+        <label style="margin-top:10px">Phone or Email</label>
+        <input class="input" name="contact" required>
+
+        <label style="margin-top:10px">Message (Optional)</label>
+        <textarea class="input" name="msg" rows="4"></textarea>
+
+        <div style="margin-top:14px;display:flex;gap:8px">
           <button type="button" class="btn btn--outline" data-prev>Back</button>
           <button type="submit" class="btn btn--primary">Submit Request</button>
         </div>
       </div>
 
-      <div class="steps-nav" aria-hidden="true">
+      <div class="steps-nav" aria-hidden="true" style="margin-top:10px">
         <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
       </div>
     </form>
   </div>
 </section>
-  </main>
+</main>
 
   <!-- FOOTER -->
   <footer class="footer">
