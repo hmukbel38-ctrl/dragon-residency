@@ -232,51 +232,54 @@
 
     <!-- CONTACT / APPLICATION -->
     <section id="contact" class="section">
-      <div class="wrap">
-        <h2>Begin Your Private Access Request</h2>
-        <p class="lead">Complete the form to begin your application for asset acquisition, strategic residency, or global investment opportunities. Our advisory team will contact you privately.</p>
+  <div class="wrap">
+    <h2>Begin Your Private Access Request</h2>
 
-        <form class="form" method="post" action="mailto:Dragonglobalwealth@gmail.com" enctype="text/plain">
-          <div class="grid-2">
-            <label>Full Name<input type="text" name="Full Name" required></label>
-            <label>Country of Residence<input type="text" name="Country" required></label>
-            <label>Preferred Asset Type
-              <select name="Asset Type" required>
-                <option>Palaces</option>
-                <option>Villas</option>
-                <option>Yachts</option>
-                <option>Private Jets</option>
-                <option>Residency Program</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label>Capital Range
-              <select name="Capital Range" required>
-                <option>250k–500k</option>
-                <option>500k–1M</option>
-                <option>1M–5M</option>
-                <option>5M+</option>
-              </select>
-            </label>
-            <label>Contact Method
-              <select name="Contact Method" required>
-                <option>WhatsApp</option>
-                <option>Email</option>
-                <option>Phone Call</option>
-              </select>
-            </label>
-            <label>Phone or Email<input type="text" name="Contact" required></label>
-          </div>
-          <label>Message (Optional)<textarea name="Message" rows="4" placeholder="Share objectives, target market, or timeline…"></textarea></label>
-          <button type="submit" class="btn wide">Submit Private Request</button>
-        </form>
-
-        <div class="direct">
-          <p><strong>Or Contact Us Directly</strong></p>
-          <p><a href="tel:+962792300213">+962792300213</a> · <a href="mailto:Dragonglobalwealth@gmail.com">Dragonglobalwealth@gmail.com</a></p>
+    <form id="dgForm" class="form-steps" novalidate>
+      <!-- Step 1 -->
+      <div class="step is-active">
+        <label>Preferred Asset Type</label>
+        <select name="asset">
+          <option>Palaces</option><option>Villas</option><option>Private Islands</option>
+          <option>Superyachts</option><option>Private Jets</option><option>Residency by Investment</option>
+        </select>
+        <label>Capital Range</label>
+        <select name="capital">
+          <option>250k–500k</option><option>500k–1M</option><option>1M–3M</option><option>3M+</option>
+        </select>
+        <div style="margin-top:12px">
+          <button type="button" class="btn btn--primary" data-next>Next</button>
         </div>
       </div>
-    </section>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <label>Full Name</label><input class="input" name="name" required>
+        <label>Country of Residence</label><input class="input" name="country" required>
+        <label>Preferred Contact</label>
+        <select name="method"><option>WhatsApp</option><option>Email</option><option>Phone</option></select>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button type="button" class="btn btn--outline" data-prev>Back</button>
+          <button type="button" class="btn btn--primary" data-next>Next</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <label>Phone or Email</label><input class="input" name="contact" required>
+        <label>Message (Optional)</label><textarea class="input" name="msg" rows="4"></textarea>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button type="button" class="btn btn--outline" data-prev>Back</button>
+          <button type="submit" class="btn btn--primary">Submit Request</button>
+        </div>
+      </div>
+
+      <div class="steps-nav" aria-hidden="true">
+        <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+    </form>
+  </div>
+</section>
   </main>
 
   <!-- FOOTER -->
