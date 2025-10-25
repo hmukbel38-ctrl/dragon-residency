@@ -511,36 +511,32 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 
 <script>
-/* دوال عالمية تعمل حتى لو تعطّل أي سكربت آخر */
-function DG_openAI(){
-  var p=document.getElementById('aiPanel'); if(!p) return;
-  p.style.display='flex'; p.setAttribute('aria-hidden','false');
-}
-function DG_closeAI(){
-  var p=document.getElementById('aiPanel'); if(!p) return;
-  p.style.display='none'; p.setAttribute('aria-hidden','true');
-}
+function DG_openAI(){const p=document.getElementById('aiPanel'); if(p){p.style.display='flex'; p.setAttribute('aria-hidden','false');}}
+function DG_closeAI(){const p=document.getElementById('aiPanel'); if(p){p.style.display='none'; p.setAttribute('aria-hidden','true');}}
+
 function DG_sendAI(){
-  try{
-    var t=encodeURIComponent(
-      'AI BRIEF'
-      +'\nName: '+(document.getElementById('aiName').value||'')
-      +'\nNeed: '+(document.getElementById('aiNeed').value||'')
-      +'\nCapital: '+(document.getElementById('aiCap').value||'')
-      +'\nContact: '+(document.getElementById('aiContact').value||'')
-      +'\nMsg: '+(document.getElementById('aiMsg').value||'')
-    );
-    window.open('https://wa.me/962792300213?text='+t,'_blank');
-    DG_closeAI();
-  }catch(e){ console.log(e); }
+  const name =(document.getElementById('aiName')?.value||'').trim();
+  const need =(document.getElementById('aiNeed')?.value||'').trim();
+  const cap  =(document.getElementById('aiCap') ?.value||'').trim();
+  const contact=(document.getElementById('aiContact')?.value||'').trim();
+  const msg  =(document.getElementById('aiMsg') ?.value||'').trim();
+
+  // منع الإرسال الفارغ
+  if(!name || !need || !cap){ alert('Please fill name, need, and capital.'); return; }
+
+  const t = encodeURIComponent(
+    `AI BRIEF`+
+    `\nName: ${name}`+
+    `\nNeed: ${need}`+
+    `\nCapital: ${cap}`+
+    `\nContact: ${contact}`+
+    `\nMsg: ${msg}`
+  );
+
+  // افتح واتسابك برسالة مكتملة
+  window.open(`https://wa.me/962792300213?text=${t}`,'_blank');
+  DG_closeAI();
 }
-/* إغلاق بالهروب والنقر خارج اللوحة */
-document.addEventListener('keydown',function(e){ if(e.key==='Escape') DG_closeAI(); });
-document.addEventListener('click',function(e){
-  var p=document.getElementById('aiPanel'), b=document.getElementById('aiBtn');
-  if(!p||!b||p.style.display!=='flex') return;
-  if(!p.contains(e.target) && e.target!==b) DG_closeAI();
-}, true);
 </script>
 </body>
 </html>
