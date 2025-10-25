@@ -416,58 +416,51 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-  <button id="aiBtn" class="ai-btn">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
-  AI Private Advisor
-</button>
 
-<div id="aiPanel" class="ai-panel">
-  <div class="ai-head">
-    <strong>AI Private Advisor</strong>
-    <button id="aiClose" style="background:none;border:0;color:#fff;cursor:pointer">✕</button>
-  </div>
-  <div class="ai-body">
-    <div class="ai-row"><input id="aiName" placeholder="Full Name"></div>
-    <div class="ai-row">
-      <select id="aiNeed">
-        <option>Residency by Investment</option><option>Ultra Luxury Real Estate</option>
-        <option>Superyachts</option><option>Private Jets</option>
-      </select>
-    </div>
-    <div class="ai-row">
-      <select id="aiCap"><option>250k–500k</option><option>500k–1M</option><option>1M–3M</option><option>3M+</option></select>
-    </div>
-    <div class="ai-row"><input id="aiContact" placeholder="WhatsApp or Email"></div>
-    <div class="ai-row"><textarea id="aiMsg" rows="3" placeholder="Brief goals (optional)"></textarea></div>
-  </div>
-  <div class="ai-foot">
-    <button id="aiSend" class="btn btn--primary" style="width:100%">Send Private Brief</button>
-  </div>
-</div>
-  <button id="aiBtn" type="button" class="ai-btn">🜲 AI Private Advisor</button>
+<button id="aiBtn" type="button" class="ai-btn" onclick="DG_openAI()">🜲 AI Private Advisor</button>
 
 <div id="aiPanel" class="ai-panel" aria-hidden="true">
   <div class="ai-head">
     <strong>AI Private Advisor</strong>
-    <button id="aiClose" type="button" style="background:none;border:0;color:#fff;cursor:pointer">✕</button>
+    <button type="button" onclick="DG_closeAI()" style="background:none;border:0;color:#fff;cursor:pointer">✕</button>
   </div>
+
   <div class="ai-body">
-    <div class="ai-row"><input id="aiName" placeholder="Full Name"></div>
     <div class="ai-row">
-      <select id="aiNeed">
-        <option>Residency by Investment</option><option>Ultra Luxury Real Estate</option>
-        <option>Superyachts</option><option>Private Jets</option>
+      <input id="aiName" name="name" placeholder="Full Name" required>
+    </div>
+
+    <div class="ai-row">
+      <select id="aiNeed" name="need" required>
+        <option value="Residency by Investment">Residency by Investment</option>
+        <option value="Ultra Luxury Real Estate">Ultra Luxury Real Estate</option>
+        <option value="Superyachts">Superyachts</option>
+        <option value="Private Jets">Private Jets</option>
       </select>
     </div>
-    <div class="ai-row"><select id="aiCap"><option>250k–500k</option><option>500k–1M</option><option>1M–3M</option><option>3M+</option></select></div>
-    <div class="ai-row"><input id="aiContact" placeholder="WhatsApp or Email"></div>
-    <div class="ai-row"><textarea id="aiMsg" rows="3" placeholder="Brief goals (optional)"></textarea></div>
+
+    <div class="ai-row">
+      <select id="aiCap" name="capital" required>
+        <option value="250k–500k">250k–500k</option>
+        <option value="500k–1M">500k–1M</option>
+        <option value="1M–3M">1M–3M</option>
+        <option value="3M+">3M+</option>
+      </select>
+    </div>
+
+    <div class="ai-row">
+      <input id="aiContact" name="contact" placeholder="WhatsApp (E164) or Email" required>
+    </div>
+
+    <div class="ai-row">
+      <textarea id="aiMsg" name="msg" rows="3" placeholder="Brief goals (optional)"></textarea>
+    </div>
   </div>
-  <div class="ai-foot" style="padding:10px;border-top:1px solid #eee">
-    <button id="aiSend" type="button" class="btn btn--primary" style="width:100%">Send Private Brief</button>
+
+  <div class="ai-foot">
+    <button type="button" class="btn btn--primary" style="width:100%" onclick="DG_sendAI()">Send Private Brief</button>
   </div>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   const btn=document.getElementById('aiBtn');
