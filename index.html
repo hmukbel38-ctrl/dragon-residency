@@ -355,5 +355,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }, {passive:true});
 });
 </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.img.gallery').forEach(gal => {
+    const imgs = Array.from(gal.querySelectorAll('img'));
+    if (!imgs.length) return;
+    imgs.forEach(img => img.classList.remove('active'));
+    let i = 0;
+    imgs[0].classList.add('active');
+    const interval = parseInt(gal.dataset.interval || '3000', 10);
+    setInterval(() => {
+      imgs[i].classList.remove('active');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('active');
+    }, interval);
+  });
+});
+</script>
 </body>
 </html>
