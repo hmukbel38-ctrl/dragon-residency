@@ -42,21 +42,27 @@
   </header>
 
   <!-- HERO -->
- <!-- HERO VIDEO SECTION -->
-<section class="video-banner" aria-label="Luxury Video Background">
-  <video class="banner-video" autoplay muted loop playsinline>
-    <source src="assets/yachts/videos/dragon_yacht_luxury.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="banner-overlay"></div>
-</section>
+ <!-- VIDEO BANNER -->
+<section class="video-banner" aria-label="Luxury Video Banner">
+  <div class="video-banner__wrap">
+    <video class="video-banner__video" autoplay muted loop playsinline preload="metadata"
+           poster="assets/hero-poster.jpg">
+      <source src="assets/yachts/videos/dragon_yacht_luxury.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
-<!-- HERO TEXT (no video behind) -->
-<section class="hero hero-text-only">
-  <div class="hero-inner">
-    <h1>Global luxury asset brokerage specializing in elite real estate, palaces, private villas, yachts, and private aviation.</h1>
-    <p>We connect investors and high-net-worth individuals with prime luxury assets across the world’s most desirable destinations.</p>
-    <a class="btn" href="#contact">Start Your Inquiry</a>
+    <!-- Overlay -->
+    <div class="video-banner__overlay"></div>
+
+    <!-- Text on top -->
+    <div class="video-banner__content">
+      <h1 class="video-banner__title">Global Wealth. Golden Residency. Elite Access.</h1>
+      <p class="video-banner__sub">Advisory for Sovereign Investors in Real Estate, Aviation, Yachts & Residency.</p>
+      <div class="video-banner__cta">
+        <a href="properties.html" class="btn btn--primary">Explore Prime Assets</a>
+        <a href="contact.html" class="btn btn--outline">Request Private Brief</a>
+      </div>
+    </div>
   </div>
 </section>
 
