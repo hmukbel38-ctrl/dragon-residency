@@ -294,3 +294,16 @@ label{font-weight:600;margin:10px 0 6px;display:block}
 .steps-nav{display:flex;gap:8px;justify-content:center}
 .steps-nav .dot{width:8px;height:8px;border-radius:999px;background:#ddd}
 .steps-nav .dot.active{background:var(--gold,#d4af37)}
+/* توحيد حجم جميع بطاقات الأصول */
+.cards-scroll .card img {
+  width: 100%;
+  height: 300px;        /* نفس ارتفاع صورة الجزيرة تقريباً */
+  object-fit: cover;    /* يخلي الصورة تملأ المساحة بدون تمدد غير طبيعي */
+  border-radius: 18px;
+}
+
+/* في حال صورة اليخت عندها كلاس خاص */
+.card.yacht img {
+  height: 300px !important;
+  object-fit: cover !important;
+}
