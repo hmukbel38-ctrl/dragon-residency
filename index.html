@@ -493,5 +493,61 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
+  <button id="aiBtn" type="button" class="ai-btn" onclick="DG_openAI()">🜲 AI Private Advisor</button>
+
+<div id="aiPanel" class="ai-panel" aria-hidden="true">
+  <div class="ai-head">
+    <strong>AI Private Advisor</strong>
+    <button id="aiClose" type="button" style="background:none;border:0;color:#fff;cursor:pointer" onclick="DG_closeAI()">✕</button>
+  </div>
+  <div class="ai-body">
+    <div class="ai-row"><input id="aiName" placeholder="Full Name"></div>
+    <div class="ai-row">
+      <select id="aiNeed">
+        <option>Residency by Investment</option><option>Ultra Luxury Real Estate</option>
+        <option>Superyachts</option><option>Private Jets</option>
+      </select>
+    </div>
+    <div class="ai-row"><select id="aiCap"><option>250k–500k</option><option>500k–1M</option><option>1M–3M</option><option>3M+</option></select></div>
+    <div class="ai-row"><input id="aiContact" placeholder="WhatsApp or Email"></div>
+    <div class="ai-row"><textarea id="aiMsg" rows="3" placeholder="Brief goals (optional)"></textarea></div>
+  </div>
+  <div class="ai-foot" style="padding:10px;border-top:1px solid #eee">
+    <button id="aiSend" type="button" class="btn btn--primary" style="width:100%" onclick="DG_sendAI()">Send Private Brief</button>
+  </div>
+</div>
+
+<script>
+/* دوال عالمية تعمل حتى لو تعطّل أي سكربت آخر */
+function DG_openAI(){
+  var p=document.getElementById('aiPanel'); if(!p) return;
+  p.style.display='flex'; p.setAttribute('aria-hidden','false');
+}
+function DG_closeAI(){
+  var p=document.getElementById('aiPanel'); if(!p) return;
+  p.style.display='none'; p.setAttribute('aria-hidden','true');
+}
+function DG_sendAI(){
+  try{
+    var t=encodeURIComponent(
+      'AI BRIEF'
+      +'\nName: '+(document.getElementById('aiName').value||'')
+      +'\nNeed: '+(document.getElementById('aiNeed').value||'')
+      +'\nCapital: '+(document.getElementById('aiCap').value||'')
+      +'\nContact: '+(document.getElementById('aiContact').value||'')
+      +'\nMsg: '+(document.getElementById('aiMsg').value||'')
+    );
+    window.open('https://wa.me/962792300213?text='+t,'_blank');
+    DG_closeAI();
+  }catch(e){ console.log(e); }
+}
+/* إغلاق بالهروب والنقر خارج اللوحة */
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') DG_closeAI(); });
+document.addEventListener('click',function(e){
+  var p=document.getElementById('aiPanel'), b=document.getElementById('aiBtn');
+  if(!p||!b||p.style.display!=='flex') return;
+  if(!p.contains(e.target) && e.target!==b) DG_closeAI();
+}, true);
+</script>
 </body>
 </html>
