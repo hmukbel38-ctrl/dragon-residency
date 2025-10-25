@@ -288,3 +288,9 @@ label{font-weight:600;margin:10px 0 6px;display:block}
 .ai-body{padding:10px;display:grid;gap:8px;overflow:auto}
 .ai-row{display:flex;gap:8px}
 .ai-row input,.ai-row select,.ai-row textarea{flex:1;padding:10px;border:1px solid #e5e7eb;border-radius:10px}
+.form-steps{max-width:780px;margin:0 auto}
+.step{display:none}
+.step.is-active{display:block}
+.steps-nav{display:flex;gap:8px;justify-content:center}
+.steps-nav .dot{width:8px;height:8px;border-radius:999px;background:#ddd}
+.steps-nav .dot.active{background:var(--gold,#d4af37)}
