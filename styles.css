@@ -308,25 +308,25 @@ label{font-weight:600;margin:10px 0 6px;display:block}
   object-fit: cover !important;
 }
 /* Floating Language */
-.lang-fab{position:fixed;right:16px;bottom:84px;z-index:99999;
-  background:#111;color:#fff;border:1px solid #333;border-radius:28px;
-  padding:10px 14px;display:flex;align-items:center;gap:8px;cursor:pointer}
-.lang-panel{position:fixed;right:16px;bottom:134px;width:260px;z-index:99998;
-  display:none;flex-direction:column;gap:10px;background:#fff;border:1px solid #eee;
-  border-radius:12px;box-shadow:0 16px 36px rgba(0,0,0,.2);padding:12px}
-.lang-panel .row{display:flex;gap:8px;align-items:center;justify-content:space-between}
-.lang-panel button{width:100%;border:1px solid #e5e7eb;background:#fff;border-radius:10px;
-  padding:10px;cursor:pointer}
-.lang-close{position:absolute;top:6px;right:8px;background:transparent;border:0;cursor:pointer}
-
-/* تنظيف واجهة Google Translate */
-#goog-gt-tt, .goog-te-banner-frame, .goog-te-balloon-frame{display:none !important}
-.goog-text-highlight{background:transparent !important;box-shadow:none !important}
-body{top:0 !important}
-.goog-te-gadget{font-size:0 !important}
-.lang-fab{position:fixed;right:16px;bottom:84px;z-index:99999;background:#111;color:#fff;border:1px solid #333;border-radius:28px;padding:10px 14px;display:flex;align-items:center;gap:8px;cursor:pointer}
-.lang-panel{position:fixed;right:16px;bottom:134px;width:260px;z-index:99998;display:none;flex-direction:column;gap:10px;background:#fff;border:1px solid #eee;border-radius:12px;box-shadow:0 16px 36px rgba(0,0,0,.2);padding:12px}
-.lang-panel button{width:100%;border:1px solid #e5e7eb;background:#fff;border-radius:10px;padding:10px;cursor:pointer}
+.lang-fab{
+  position:fixed; right:16px; bottom:160px;        /* أبعده عن زر الـAI */
+  z-index:2147483647;                              /* أعلى قيمة عملية */
+  background:#111; color:#fff; border:1px solid #333;
+  border-radius:28px; padding:10px 14px;
+  display:flex; align-items:center; gap:8px; cursor:pointer;
+  pointer-events:auto;
+}
+.lang-panel{
+  position:fixed; right:16px; bottom:210px; width:260px;
+  z-index:2147483600; display:none; flex-direction:column; gap:10px;
+  background:#fff; border:1px solid #eee; border-radius:12px;
+  box-shadow:0 16px 36px rgba(0,0,0,.2); padding:12px
+}
+.lang-panel button{width:100%; border:1px solid #e5e7eb; background:#fff; border-radius:10px; padding:10px; cursor:pointer}
 #goog-gt-tt,.goog-te-banner-frame,.goog-te-balloon-frame{display:none !important}
-.goog-text-highlight{background:transparent !important;box-shadow:none !important}
+.goog-text-highlight{background:transparent !important; box-shadow:none !important}
 body{top:0 !important}
+@media (max-width:480px){
+  .lang-fab{bottom:180px}    /* على الموبايل أبعد أكثر */
+  .lang-panel{bottom:230px}
+}
