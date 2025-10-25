@@ -411,3 +411,30 @@ body{top:0 !important}
   background: #f5f5f5;
   color: #b8860b;
 }
+.nav-lang { position: relative; }
+#navLangBtn { cursor: pointer; }
+.nav-lang__menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  min-width: 140px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  display: none;
+  z-index: 9999;
+}
+.nav-lang__menu li { list-style: none; }
+.nav-lang__menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #111;
+  text-decoration: none;
+}
+.nav-lang__menu a:hover {
+  background: #f0f0f0;
+  color: #b8860b;
+}
+#goog-gt-tt, .goog-te-banner-frame, .goog-te-balloon-frame { display:none !important; }
+.goog-text-highlight { background:none !important; box-shadow:none !important; }
+body { top:0 !important; }
