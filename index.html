@@ -621,5 +621,60 @@ function DG_sendAI(){
   v.addEventListener('pause',()=>{ if(!v.ended) tryPlay(); });
 })();
 </script>
+  <!-- Floating Language FAB -->
+<button class="lang-fab" id="langFab" type="button">🌐 Language</button>
+
+<!-- Language Panel -->
+<div class="lang-panel" id="langPanel" aria-hidden="true">
+  <button class="lang-close" id="langClose" title="Close">✕</button>
+  <div class="row"><strong>Choose Language</strong></div>
+  <!-- عنصر Google (مخفي شكليًا) -->
+  <div id="google_translate_element" style="height:0;overflow:hidden"></div>
+  <!-- أزرار سريعة -->
+  <button type="button" data-lang="en">English</button>
+  <button type="button" data-lang="ar">العربية</button>
+  <button type="button" data-lang="zh-CN">中文 (简体)</button>
+</div>
+  <script>
+/* فتح/إغلاق اللوحة */
+(function(){
+  const fab=document.getElementById('langFab');
+  const panel=document.getElementById('langPanel');
+  const close=document.getElementById('langClose');
+  const toggle=()=>{const s=getComputedStyle(panel).display; panel.style.display=(s==='none')?'flex':'none'; panel.setAttribute('aria-hidden', s==='none'?'false':'true');};
+  fab.addEventListener('click',toggle); close.addEventListener('click',()=>{panel.style.display='none'; panel.setAttribute('aria-hidden','true');});
+  document.addEventListener('click',e=>{ if(panel.style.display!=='none' && !panel.contains(e.target) && e.target!==fab) { panel.style.display='none'; panel.setAttribute('aria-hidden','true'); } }, true);
+})();
+
+/* تحميل Google Translate */
+window.googleTranslateElementInit=function(){
+  new google.translate.TranslateElement({
+    pageLanguage: 'ar',                 // لغة الموقع الأساسية الحالية
+    includedLanguages: 'en,ar,zh-CN',   // اللغات المفعّلة
+    autoDisplay: false
+  }, 'google_translate_element');
+};
+/* سكربت Google */
+(function(){
+  var s=document.createElement('script');
+  s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  document.head.appendChild(s);
+})();
+
+/* تبديل اللغة عبر الأزرار */
+(function(){
+  function setLang(code){
+    const sel = document.querySelector('select.goog-te-combo');
+    if(!sel){ setTimeout(()=>setLang(code),300); return; }
+    sel.value = code; sel.dispatchEvent(new Event('change'));
+    // ضبط الاتجاه للعربية
+    if(code==='ar'){ document.documentElement.setAttribute('dir','rtl'); document.documentElement.setAttribute('lang','ar'); }
+    else { document.documentElement.setAttribute('dir','ltr'); document.documentElement.setAttribute('lang',code); }
+  }
+  document.querySelectorAll('#langPanel [data-lang]').forEach(btn=>{
+    btn.addEventListener('click',()=>setLang(btn.getAttribute('data-lang')));
+  });
+})();
+</script>
 </body>
 </html>
