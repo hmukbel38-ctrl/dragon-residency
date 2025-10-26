@@ -877,5 +877,48 @@ document.querySelectorAll('.lang-option').forEach(el => {
     });
   })();
 </script>
+  <script>
+(function(){
+  // تحميل Google Translate
+  window.googleTranslateElementInit = function(){
+    new google.translate.TranslateElement({
+      pageLanguage:'en',
+      includedLanguages:'en,ar,zh-CN',
+      autoDisplay:false
+    }, 'google_translate_element');
+  };
+  var s=document.createElement('script');
+  s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  document.head.appendChild(s);
+
+  // فتح/إغلاق القائمة
+  document.getElementById('navLangBtn').addEventListener('click',function(e){
+    e.preventDefault();
+    var m=document.getElementById('navLangMenu');
+    m.style.display = (m.style.display==='block') ? 'none' : 'block';
+  });
+  document.addEventListener('click',function(e){
+    var m=document.getElementById('navLangMenu'), b=document.getElementById('navLangBtn');
+    if(m && m.style.display==='block' && !m.contains(e.target) && e.target!==b){ m.style.display='none'; }
+  });
+
+  // اختيار اللغة
+  document.querySelectorAll('.lang-option').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var lang=this.dataset.lang;
+      // الانتظار حتى يظهر الـ combo ثم التعيين
+      (function trySet(){
+        var combo=document.querySelector('#google_translate_element select.goog-te-combo');
+        if(!combo){ return setTimeout(trySet,200); }
+        combo.value=lang;
+        combo.dispatchEvent(new Event('change'));
+        document.documentElement.dir = (lang==='ar') ? 'rtl' : 'ltr';
+        document.getElementById('navLangMenu').style.display='none';
+      })();
+    });
+  });
+})();
+</script>
 </body>
 </html>
