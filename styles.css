@@ -450,3 +450,22 @@ body{top:0 !important}
 .card img{
   height: auto !important;
 }    
+/* قتل كل بقايا Google Translate */
+#goog-gt-tt,
+.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-gadget,
+.goog-te-balloon-frame,
+.goog-text-highlight,
+.skiptranslate,
+iframe[id^="goog-"],
+div[id^="goog-"],
+span[class^="goog-"]{
+  display:none !important;
+  visibility:hidden !important;
+}
+
+html, body{
+  top:0 !important;
+  position:static !important;
+}
