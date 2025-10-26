@@ -477,3 +477,15 @@ body { top:0 !important; }
 /* إخفاء طبقات Google Translate المزعجة وحل مشكلة body top */
 #goog-gt-tt,.goog-te-banner-frame,.goog-te-gadget-simple{ display:none !important; }
 body{ top:0 !important; }
+/* Language Dropdown */
+.nav-lang{position:relative}
+#navLangBtn{cursor:pointer}
+.nav-lang__menu{position:absolute;top:100%;right:0;background:#fff;border:1px solid #ddd;border-radius:8px;list-style:none;margin:8px 0 0;padding:6px 0;display:none;z-index:9999}
+.nav-lang__menu a{display:block;padding:10px 16px;color:#111;text-decoration:none}
+.nav-lang__menu a:hover{background:#f4f4f4}
+
+/* إخفاء عناصر Google Translate ومنع دفع الصفحة */
+#google_translate_element{position:fixed;opacity:0;pointer-events:none;height:0}
+#goog-gt-tt,.goog-te-banner-frame,.goog-te-balloon-frame{display:none!important}
+.goog-text-highlight{background:inherit!important;box-shadow:none!important}
+body{top:0!important}
