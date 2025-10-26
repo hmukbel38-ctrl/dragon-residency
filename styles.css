@@ -422,34 +422,8 @@ body{top:0 !important}
   background: #f0f0f0;
   color: #b8860b;
 }
-#goog-gt-tt, .goog-te-banner-frame, .goog-te-balloon-frame { display:none !important; }
-.goog-text-highlight { background:none !important; box-shadow:none !important; }
-body { top:0 !important; }
-/* Language Dropdown */
-.nav-lang { position: relative; }
-#navLangBtn { cursor: pointer; }
-.nav-lang__menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  list-style: none;
-  display: none;
-  padding: 5px 0;
-  z-index: 9999;
-}
-.nav-lang__menu li a {
-  display: block;
-  padding: 8px 15px;
-  color: #111;
-  text-decoration: none;
-}
-.nav-lang__menu li a:hover {
-  background: #f2f2f2;
-  color: #b8860b;
-}
+
+
 
         /* توحيد مساحة عرض الصور لكل الكروت بالقوة */
 .cards-scroll .card.item .img,
