@@ -645,6 +645,28 @@ function DG_sendAI(){
   v.addEventListener('pause',()=>{ if(!v.ended) tryPlay(); });
 })();
 </script>
+  <script>
+(function(){
+  const DURATION = 3000; // نفس السرعة للجميع
+
+  // جهّز كل جاليري
+  const galleries = [...document.querySelectorAll('.img.gallery')].map(g => {
+    const imgs = [...g.querySelectorAll('img')];
+    if (imgs.length===0) return null;
+    imgs.forEach((im,i)=> im.classList.toggle('show', i===0));
+    return {el:g, imgs, i:0};
+  }).filter(Boolean);
+
+  // مؤقت واحد يحرّك الكل معًا
+  setInterval(() => {
+    galleries.forEach(g => {
+      g.imgs[g.i].classList.remove('show');
+      g.i = (g.i + 1) % g.imgs.length;
+      g.imgs[g.i].classList.add('show');
+    });
+  }, DURATION);
+})();
+</script>
   
 </body>
 </html>
