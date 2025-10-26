@@ -581,6 +581,28 @@ function DG_sendAI(){
   }, DURATION);
 })();
 </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleries = document.querySelectorAll('.img.gallery, .img.palaces-slider');
+
+  galleries.forEach(gal => {
+    const imgs = Array.from(gal.querySelectorAll('img'));
+    if (!imgs.length) return;
+
+    let i = 0;
+    imgs.forEach(img => img.classList.remove('active'));
+    imgs[0].classList.add('active');
+
+    const interval = gal.dataset.interval ? parseInt(gal.dataset.interval) : 2000; // 2000 = ثانيتين
+
+    setInterval(() => {
+      imgs[i].classList.remove('active');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('active');
+    }, interval);
+  });
+});
+</script>
   
 </body>
 </html>
