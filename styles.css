@@ -518,3 +518,20 @@ body{top:0!important}
   width: fit-content;
   font-weight: bold;
 }
+/* حجم موحّد لكل صور الكروت */
+.cards-scroll .card .img{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;   /* يحافظ على التناسب بدل ارتفاع ثابت */
+  overflow: hidden;
+}
+.cards-scroll .card .img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* موبايل أصغر شوي إن حبيت */
+@media (max-width: 480px){
+  .cards-scroll .card .img{ aspect-ratio: 4 / 3; }
+}
