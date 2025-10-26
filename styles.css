@@ -469,3 +469,12 @@ html, body{
   top:0 !important;
   position:static !important;
 }
+/* تكديس صور الكرت فوق بعض مع انتقال ناعم */
+.img.gallery{
+  position:relative; overflow:hidden; height:300px;
+}
+.img.gallery img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; opacity:0; transition:opacity .6s linear;
+}
+.img.gallery img.show{ opacity:1; }
