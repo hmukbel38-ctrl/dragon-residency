@@ -483,19 +483,35 @@ html, body{
   justify-content: space-between;
   align-items: center;
 }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
 
-.nav-action .btn-inquiry {
+.links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-action {
+  margin-left: auto;
+}
+
+.btn-inquiry {
   background: linear-gradient(90deg, #d4af37, #f5cf72);
-  color: #000;
-  font-weight: 700;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border-radius: 40px;
+  font-weight: 700;
+  color: #000;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.nav-action .btn-inquiry:hover {
-  background: linear-gradient(90deg, #f5cf72, #d4af37);
+.btn-inquiry:hover {
   transform: translateY(-2px);
 }
+
+                       
