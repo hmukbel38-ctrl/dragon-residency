@@ -489,3 +489,32 @@ body{ top:0 !important; }
 #goog-gt-tt,.goog-te-banner-frame,.goog-te-balloon-frame{display:none!important}
 .goog-text-highlight{background:inherit!important;box-shadow:none!important}
 body{top:0!important}
+/* Residency Card Styling */
+.residency-card img {
+  height: 300px !important;
+  object-fit: cover !important;
+  border-radius: 10px;
+}
+.residency-card h3 {
+  font-weight: bold;
+  color: #b8860b;
+  margin-top: 15px;
+  text-align: center;
+}
+.residency-card p {
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  padding: 0 10px;
+}
+.residency-card .mini-btn {
+  display: block;
+  margin: 10px auto;
+  background: linear-gradient(to right, #d4af37, #b8860b);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-align: center;
+  width: fit-content;
+  font-weight: bold;
+}
