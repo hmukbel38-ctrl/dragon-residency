@@ -463,3 +463,17 @@ body { top:0 !important; }
   background: #f2f2f2;
   color: #b8860b;
 }
+/* Language dropdown */
+.nav-lang__menu{
+  position:absolute; top:100%; right:0;
+  background:#fff; border:1px solid #ccc; border-radius:6px;
+  list-style:none; margin:0; padding:6px 0; display:none; z-index:9999;
+}
+.nav-lang__menu li a{
+  display:block; padding:8px 16px; color:#111; text-decoration:none;
+}
+.nav-lang__menu li a:hover{ background:#f2f2f2; }
+
+/* إخفاء طبقات Google Translate المزعجة وحل مشكلة body top */
+#goog-gt-tt,.goog-te-banner-frame,.goog-te-gadget-simple{ display:none !important; }
+body{ top:0 !important; }
