@@ -778,3 +778,23 @@ section, .section, .page-section {
     gap: 20px !important;
   }
 }
+/* MOBILE LAYOUT HARD FIX */
+@media (max-width:768px){
+  html,body{overflow-x:hidden!important}
+
+  /* أوقف التخطيطات الأفقية */
+  .row,.rows,.grid,.columns,.wrap,.content{display:block!important;width:100%!important;max-width:100%!important}
+
+  /* كل الأعمدة تصير 100% وتحت بعض */
+  .col,.column,.left,.right,.side-panel,.sidebar,.right-section{width:100%!important;max-width:100%!important;float:none!important;clear:both!important;margin:0!important}
+
+  /* ألغِ العناصر اللاصقة على الموبايل */
+  .sticky,[style*="position:sticky"]{position:static!important;top:auto!important}
+
+  /* أخفِ سكة الروابط الجانبية (Start Your Inquiry اليسار) */
+  .anchor-rail,.page-anchors,.left-rail{display:none!important}
+
+  /* الكروت عمود واحد */
+  .cards{display:grid!important;grid-template-columns:1fr!important;gap:16px!important}
+  .card,.card-item{width:100%!important;max-width:100%!important}
+}
