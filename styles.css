@@ -603,3 +603,9 @@ img, video {
   height: auto !important;
   display: block !important;
 }
+/* FORCE MOBILE FLOW */
+html,body{width:100% !important;min-width:0 !important;max-width:100% !important;overflow-x:hidden !important}
+*{box-sizing:border-box;max-width:100%}
+.page,main,section,header,footer,.container,.wrap{width:100% !important;max-width:100% !important;margin:0 auto !important;padding:0 16px !important;min-width:0 !important}
+.row,.nav,.cards,.sections{display:flex;flex-wrap:wrap !important}
+*{transform:none !important} /* يلغي أي scale يكسر التخطيط */
