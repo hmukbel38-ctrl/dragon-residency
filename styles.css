@@ -609,3 +609,42 @@ html,body{width:100% !important;min-width:0 !important;max-width:100% !important
 .page,main,section,header,footer,.container,.wrap{width:100% !important;max-width:100% !important;margin:0 auto !important;padding:0 16px !important;min-width:0 !important}
 .row,.nav,.cards,.sections{display:flex;flex-wrap:wrap !important}
 *{transform:none !important} /* يلغي أي scale يكسر التخطيط */
+/* == BASE == */
+html,body{margin:0;padding:0;width:100%;max-width:100%;overflow-x:hidden}
+*{box-sizing:border-box;max-width:100%}
+
+/* == MOBILE LAYOUT LIKE THE SHOT == */
+@media (max-width:768px){
+
+  /* شريط الأعلى والنافبار */
+  .topbar .wrap,
+  header .wrap{display:block}
+  .mini-brand,.mini-contacts{display:block;margin:8px 0}
+  nav ul{display:flex;flex-wrap:wrap;gap:12px;padding:0;margin:8px 0}
+
+  /* حاويات عامة */
+  .wrap,.container,main,section,header,footer{width:100%;max-width:100%;margin:0 auto;padding:0 16px}
+
+  /* الأزرار */
+  .btn,.btn-inquiry,.btn--outline{width:100%;display:block;text-align:center}
+
+  /* الهيرو والفيديو */
+  .video-banner,
+  .hero{padding:0;margin:0;border:0}
+  #heroVideo,
+  .video-banner .banner-video,
+  .hero video{
+    display:block;width:100%;
+    height:56.25vw;          /* 16:9 */
+    max-height:360px;
+    object-fit:cover;
+  }
+
+  /* العناوين والنص */
+  .video-banner__title{font-size:8vw;line-height:1.1}   /* تكبير مناسب للموبايل */
+  .video-banner__sub{font-size:4.2vw}
+
+  /* الكروت */
+  .cards{display:grid;grid-template-columns:1fr;gap:16px}
+  .card{width:100%}
+}
