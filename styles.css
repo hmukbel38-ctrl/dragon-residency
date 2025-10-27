@@ -653,3 +653,15 @@ html,body{width:100%!important;max-width:100%!important;min-width:0!important;ov
 *{box-sizing:border-box;max-width:100%!important;min-width:0!important;transform:none!important}
 .wrap,.container,main,section,header,footer{width:100%!important;max-width:100%!important;margin:0 auto!important;padding:0 16px!important}
 nav ul{display:flex;flex-wrap:wrap!important}
+/* FINAL FIX: kill horizontal width */
+html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+*{box-sizing:border-box;max-width:100%!important;min-width:0!important;transform:none!important}
+
+.wrap,.container,main,section,header,footer{width:100%!important;max-width:100%!important;margin:0 auto!important;padding:0 16px!important}
+
+nav, .topbar, .mini-brand, .mini-contacts { white-space: normal !important; }
+header nav ul{display:flex;flex-wrap:wrap!important;gap:12px}
+
+/* أي عنصر واسع جداً */
+.row, .cards, .sections { display:flex; flex-wrap:wrap!important }
+img,svg,video{max-width:100%;height:auto;display:block}
