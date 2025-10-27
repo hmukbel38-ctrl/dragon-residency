@@ -681,3 +681,29 @@ img,svg,video{max-width:100%;height:auto;display:block}
   max-width: 350px !important;  /* الكارد حجم مناسب على الموبايل */
   flex: 1 1 calc(100% - 32px) !important;
 }
+/* === UNIVERSAL SECTION CONTAINER FIX === */
+section, .section, .page-section {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 16px !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+/* === CARDS LAYOUT FIX === */
+.cards, .cards-container, .sections, .items {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  gap: 16px !important;
+  overflow: hidden !important;
+}
+
+.cards > *, .card, .card-item {
+  flex: 1 1 calc(100% - 32px) !important;
+  max-width: 350px !important;
+  margin: 0 auto !important;
+}
