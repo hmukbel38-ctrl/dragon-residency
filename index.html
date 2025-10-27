@@ -611,6 +611,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+      <script>
+setTimeout(() => {
+  let bad = null;
+  for (const el of document.querySelectorAll('body *')) {
+    const r = el.getBoundingClientRect();
+    if (r.right > window.innerWidth + 1 || r.width > window.innerWidth + 1) {
+      bad = el; el.style.outline = '3px solid red'; el.style.background='rgba(255,0,0,0.05)';
+      console.log('OVERFLOW:', el, r.width);
+      break;
+    }
+  }
+  if(!bad) console.log('No overflow found');
+}, 0);
+</script>
   
 </body>
 </html>
