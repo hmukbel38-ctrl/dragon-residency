@@ -13,7 +13,12 @@
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:var(--ink)}
-.wrap{width:min(1160px,92%);margin-inline:auto}
+.wrap {
+  width: 100%;
+  max-width: 1160px; /* أو احذفها إن أردت عرض كامل */
+  margin-inline: auto;
+  padding-inline: 16px; /* حتى لا تلتصق المحتويات بالحواف */
+}
 
 /* Topbar */
 .topbar{border-bottom:1px solid var(--line);background:#fcfcfe}
