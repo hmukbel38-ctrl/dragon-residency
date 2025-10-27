@@ -518,5 +518,31 @@ html, body{
 .btn-inquiry:hover {
   transform: translateY(-2px);
 }
+/* === MOBILE FIX OVERRIDES === */
+html, body { width:100%; max-width:100%; overflow-x:hidden; }
 
+.wrap, .container, main, header, footer {
+  width:100% !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+  padding-inline:16px !important;
+  min-width:0 !important;
+}
+
+img, video { max-width:100%; height:auto; display:block; }
+
+/* عالج أي تصغير قسري */
+body, main, .page, .site, .content {
+  transform:none !important;
+  zoom:1 !important;
+}
+
+/* القوائم والكروت */
+nav ul { display:flex; flex-wrap:wrap; gap:8px; }
+
+.cards { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:480px){ .cards { grid-template-columns:1fr; }}
+
+/* امنع قيود سطح المكتب */
+* { box-sizing:border-box; }
                        
