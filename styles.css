@@ -665,3 +665,19 @@ header nav ul{display:flex;flex-wrap:wrap!important;gap:12px}
 /* أي عنصر واسع جداً */
 .row, .cards, .sections { display:flex; flex-wrap:wrap!important }
 img,svg,video{max-width:100%;height:auto;display:block}
+/* === FIX CARDS OVERFLOW ON MOBILE === */
+.cards, .cards-container, .sections {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  overflow: hidden !important;
+}
+
+.cards > *, .card, .card-item {
+  width: 100% !important;
+  max-width: 350px !important;  /* الكارد حجم مناسب على الموبايل */
+  flex: 1 1 calc(100% - 32px) !important;
+}
