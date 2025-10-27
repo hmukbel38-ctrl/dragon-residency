@@ -570,3 +570,36 @@ video, iframe {
   max-width: 100% !important;
   height: auto !important;
 }                      
+/* === LAYOUT RESET FOR MOBILE & DESKTOP === */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+.wrap, .container, main, section, header, footer, .page {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding-inline: 16px !important;
+  box-sizing: border-box !important;
+}
+
+.cards {
+  display: grid !important;
+  gap: 16px !important;
+}
+@media (min-width: 768px) {
+  .cards { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 767px) {
+  .cards { grid-template-columns: 1fr !important; }
+}
+
+img, video {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
