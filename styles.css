@@ -792,7 +792,31 @@ section, .section, .page-section {
 
   /* أخفِ سكة الروابط الجانبية (Start Your Inquiry اليسار) */
   .anchor-rail,.page-anchors,.left-rail{display:none!important}
+/* ===== Mobile Fixes ===== */
+@media (max-width: 768px) {
+  .cards-scroll {
+    display: flex;
+    overflow-x: scroll;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+  }
 
+  .card.item {
+    min-width: 80%;
+    scroll-snap-align: start;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+}
   /* الكروت عمود واحد */
   .cards{display:grid!important;grid-template-columns:1fr!important;gap:16px!important}
   .card,.card-item{width:100%!important;max-width:100%!important}
