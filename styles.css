@@ -707,3 +707,31 @@ section, .section, .page-section {
   max-width: 350px !important;
   margin: 0 auto !important;
 }
+/* === MOBILE FIX: STACK SECTIONS === */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden !important;
+  }
+
+  section, .section, .page-section {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* إذا كان في layout أفقي */
+  .wrap, .content, .grid, .columns {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* الكولمنات الجانبية */
+  .column, .col, .side-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
