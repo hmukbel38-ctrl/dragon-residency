@@ -735,3 +735,46 @@ section, .section, .page-section {
     margin: 0 auto !important;
   }
 }
+/* === FINAL MOBILE RESPONSIVE FIX === */
+@media (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* إجبار كل السكاشن أن تصبح 100% عرض */
+  section, .section, .page-section, .wrap, .content, .columns, .grid {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* منع أي عنصر من التمدد العرضي */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* الأقسام الجانبية تتحول إلى عمودية */
+  .columns > div, 
+  .grid > div,
+  .side-panel, 
+  .sidebar, 
+  .right-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    clear: both !important;
+    margin: 0 !important;
+  }
+
+  /* ترتيب العناصر بشكل عمودي */
+  .columns, .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+}
