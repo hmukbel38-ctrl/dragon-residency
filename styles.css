@@ -648,3 +648,8 @@ html,body{margin:0;padding:0;width:100%;max-width:100%;overflow-x:hidden}
   .cards{display:grid;grid-template-columns:1fr;gap:16px}
   .card{width:100%}
 }
+/* MOBILE FIX */
+html,body{width:100%!important;max-width:100%!important;min-width:0!important;overflow-x:hidden!important;margin:0!important;padding:0!important}
+*{box-sizing:border-box;max-width:100%!important;min-width:0!important;transform:none!important}
+.wrap,.container,main,section,header,footer{width:100%!important;max-width:100%!important;margin:0 auto!important;padding:0 16px!important}
+nav ul{display:flex;flex-wrap:wrap!important}
