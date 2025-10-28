@@ -282,31 +282,21 @@ a{text-decoration:none;color:inherit}
   color: #444;
   margin-bottom: 20px;
 }
-/* Destinations grid 2x3 mini cards */
-.destinations-grid{
+/* Destinations grid */
+.destinations-row{
   display:grid;
-  grid-template-columns:repeat(2, minmax(0,1fr));
-  gap:12px;
-  max-width:720px;
-  margin:0 auto;
+  gap:16px;
+  grid-template-columns:repeat(1,1fr);
 }
-@media (min-width:768px){
-  .destinations-grid{ grid-template-columns:repeat(3, minmax(0,1fr)); max-width:980px; }
+@media (min-width:640px){ .destinations-row{ grid-template-columns:repeat(2,1fr);} }
+@media (min-width:1024px){ .destinations-row{ grid-template-columns:repeat(3,1fr);} }
+
+.destination-card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:16px; box-shadow:var(--shadow); text-align:center;
 }
-.dest-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:14px 12px;
-  text-align:center;
-  box-shadow:var(--shadow);
-}
-.dest-card:hover{ border-color:var(--gold); }
 .flag{
-  display:inline-block;
-  font-size:28px;
-  margin-bottom:6px;
-  font-family:"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+  display:block; margin:0 auto 10px auto; height:48px; width:auto;
 }
-.dest-card h3{ margin:2px 0 4px; font-size:14px; }
-.dest-card p{ margin:0; font-size:12px; color:#555; }
+.destination-card h3{ margin:6px 0 2px 0; font-size:16px; }
+.destination-card p{ margin:0; color:#555; font-size:13px; }
