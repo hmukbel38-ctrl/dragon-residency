@@ -282,42 +282,69 @@ a{text-decoration:none;color:inherit}
   color: #444;
   margin-bottom: 20px;
 }
+/* ===== Luxury Destinations Grid - Final Premium Version ===== */
+
 .destinations-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* حجم أصغر */
-  gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(2, 160px); /* عمودين فقط */
+  justify-content: center;
+  gap: 22px 35px; /* فراغ رأسي وأفقي مرتب وفخم */
+  padding: 20px 0;
 }
 
 .destination-card {
-  background: #fff;
-  border: 1px solid #e2c24f;
+  width: 160px; /* حجم صغير وفاخر */
+  background: #ffffff;
+  border: 1px solid rgba(212,175,55,0.35); /* ذهبي راقي */
   border-radius: 16px;
-  padding: 15px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06),
+              0 0 12px rgba(212,175,55,0.20);
+  padding: 14px 10px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(226, 194, 79, 0.25);
-  width: 180px; /* تم تصغير الحجم */
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .destination-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(226, 194, 79, 0.35);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1),
+              0 0 16px rgba(212,175,55,0.35);
+  border-color: rgba(212,175,55,0.8);
 }
 
 .flag {
-  font-size: 38px; /* تصغير العلم */
-  margin-bottom: 10px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  font-size: 28px;
+  background: radial-gradient(circle at 30% 30%, #fff8d6, #f0d27a);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.25),
+              inset 0 0 4px rgba(255,255,255,0.9);
 }
 
 .destination-card h3 {
-  font-size: 16px; /* عنوان أصغر */
+  font-size: 13px;
+  margin: 6px 0 4px;
   font-weight: bold;
-  margin-bottom: 6px;
+  color: #222;
 }
 
 .destination-card p {
-  font-size: 12px; /* الوصف أقصر */
+  font-size: 11px;
   color: #555;
+  line-height: 1.3;
   margin: 0;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .destinations-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .destination-card {
+    width: 100%;
+  }
 }
