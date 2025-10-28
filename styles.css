@@ -282,21 +282,64 @@ a{text-decoration:none;color:inherit}
   color: #444;
   margin-bottom: 20px;
 }
-/* Destinations grid */
+/* الفخامة الملكية للكروت */
+.destination-card{
+  position:relative;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border:1px solid rgba(255,215,0,0.4);
+  border-radius:22px;
+  padding:18px;
+  text-align:center;
+  max-width:230px;
+  margin:auto;
+  transition: all .4s ease;
+  box-shadow:0 0 10px rgba(255,215,0,0.25);
+  color:#fff;
+}
+
+/* تأثير عند المرور */
+.destination-card:hover{
+  transform: translateY(-6px);
+  box-shadow:0 0 25px rgba(255,215,0,0.6);
+  border-color:rgba(255,215,0,0.9);
+}
+
+/* الإيموجي داخل دائرة فاخرة */
+.flag{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  background: linear-gradient(135deg, #d4af37, #f7e199);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  margin:0 auto 12px auto;
+  box-shadow:0 0 12px rgba(0,0,0,0.5);
+}
+
+/* العنوان */
+.destination-card h3{
+  font-size:16px;
+  margin:8px 0 4px 0;
+  font-weight:600;
+  letter-spacing:0.5px;
+  color:#f7e199;
+}
+
+/* الوصف */
+.destination-card p{
+  margin:0;
+  font-size:13px;
+  color:#ddd;
+  line-height:1.4;
+}
+
+/* المصفوفة */
 .destinations-row{
   display:grid;
-  gap:16px;
-  grid-template-columns:repeat(1,1fr);
+  grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+  gap:24px;
+  justify-items:center;
 }
-@media (min-width:640px){ .destinations-row{ grid-template-columns:repeat(2,1fr);} }
-@media (min-width:1024px){ .destinations-row{ grid-template-columns:repeat(3,1fr);} }
-
-.destination-card{
-  background:#fff;border:1px solid var(--line);border-radius:16px;
-  padding:16px; box-shadow:var(--shadow); text-align:center;
-}
-.flag{
-  display:block; margin:0 auto 10px auto; height:48px; width:auto;
-}
-.destination-card h3{ margin:6px 0 2px 0; font-size:16px; }
-.destination-card p{ margin:0; color:#555; font-size:13px; }
