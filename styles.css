@@ -57,7 +57,7 @@ a{text-decoration:none;color:inherit}
   display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;
 }
 .cards-row > .card{scroll-snap-align:start;min-width:280px;max-width:320px;flex:0 0 auto}
-
+.cards-row > .card{min-width:280px;max-width:320px;flex:0 0 auto;scroll-snap-align:start}
 @media (min-width:768px){
   .cards-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;overflow:visible}
   .cards-row > .card{min-width:unset;max-width:unset;flex:none}
