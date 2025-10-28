@@ -86,3 +86,19 @@ a{text-decoration:none;color:inherit}
 /* Footer */
 .footer{border-top:1px solid var(--line);padding:18px 0;background:#fafafa}
 .footer small{color:#555}
+/* Uniform card images */
+.cards .item .img{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* 4:3 ثابت لكل الصور */
+  overflow: hidden;
+  border-radius: 12px;
+}
+.cards .item .img img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;     /* قص من الأطراف بدل ما تتمدد */
+}
