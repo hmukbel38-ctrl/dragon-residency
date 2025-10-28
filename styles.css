@@ -54,15 +54,50 @@ a{text-decoration:none;color:inherit}
 
 /* Cards row: mobile horizontal, desktop grid */
 .cards-row{
-  display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;
-}
-.cards-row > .card{scroll-snap-align:start;min-width:280px;max-width:320px;flex:0 0 auto}
-.cards-row > .card{min-width:280px;max-width:320px;flex:0 0 auto;scroll-snap-align:start}
-@media (min-width:768px){
-  .cards-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;overflow:visible}
-  .cards-row > .card{min-width:unset;max-width:unset;flex:none}
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:8px;
 }
 
+/* بطاقات العرض */
+.cards-row > .card {
+  min-width: 280px;
+  max-width: 320px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* تنسيق الصور داخل البطاقات */
+.card .img {
+  aspect-ratio: 16/11;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eee;
+  margin-bottom: 10px;
+}
+
+.card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width:768px){
+  .cards-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    overflow:visible;
+  }
+  .cards-row > .card{
+    min-width:unset;
+    max-width:unset;
+    flex:none;
+  }
+}
 /* Card */
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:12px}
 .card__img{aspect-ratio:16/11;border-radius:12px;overflow:hidden;margin-bottom:10px;background:#eee}
