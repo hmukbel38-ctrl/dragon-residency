@@ -408,5 +408,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 3000);
 });
 </script> 
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // الميزانية
+  const budget = document.getElementById('budget');
+  const out = document.getElementById('budgetOut');
+  if (budget && out){
+    const fmt = v => new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(v);
+    const sync = () => out.value = '$ ' + fmt(budget.value);
+    budget.min = 50000; budget.max = 5000000; budget.step = 5000;
+    budget.addEventListener('input', sync); sync();
+  }
+
+  // تحقّق بسيط قبل الإرسال
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', (e)=>{
+      const req = ['fullName','emailOrPhone','country','interest'];
+      for(const id of req){
+        const el = form.querySelector('[name="'+id+'"]') || document.getElementById(id);
+        if(!el) continue;
+        if((el.type==='checkbox' || el.type==='radio')){
+          const any = form.querySelectorAll('[name="'+id+'"]:checked').length>0;
+          if(!any){alert('اكمل الحقول المطلوبة.'); e.preventDefault(); return;}
+        }else if(!el.value.trim()){alert('اكمل الحقول المطلوبة.'); e.preventDefault(); return;}
+      }
+    });
+  }
+});
+</script> 
 </body>
 </html>
