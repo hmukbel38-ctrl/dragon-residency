@@ -273,15 +273,112 @@
     <a class="mini-btn" href="#contact">Start Your Inquiry</a>
   </div>
 </section>
-  <!-- Contact -->
-  <section id="contact" class="section muted">
-    <div class="wrap contact">
-      <h2>Begin Your Private Access Request</h2>
-      <p>Email: <a href="mailto:Dragonglobalwealth@gmail.com">Dragonglobalwealth@gmail.com</a> • Phone:
-        <a href="tel:+962792300213">+962 79 230 0213</a></p>
-      <a class="btn" href="mailto:Dragonglobalwealth@gmail.com?subject=Dragon%20Access%20Request">Request by Email</a>
-    </div>
-  </section>
+ <section id="contact" class="section">
+  <div class="wrap">
+    <h2 class="section__title">Start Your Private Inquiry</h2>
+
+    <form id="contactForm" class="contact-grid" action="#" method="post" novalidate>
+
+      <!-- Full Name -->
+      <div class="field">
+        <label>Full Name</label>
+        <input type="text" name="name" required placeholder="Your full name">
+      </div>
+
+      <!-- Preferred Contact Method -->
+      <div class="field">
+        <label>Preferred Contact Method</label>
+        <select name="contact_method" required>
+          <option value="">Select…</option>
+          <option>Email</option>
+          <option>WhatsApp</option>
+          <option>Phone Call</option>
+          <option>Telegram</option>
+        </select>
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="name@email.com">
+      </div>
+
+      <!-- Phone -->
+      <div class="field">
+        <label>Phone / WhatsApp Number</label>
+        <input type="tel" name="phone" placeholder="+971 50 000 0000">
+      </div>
+
+      <!-- Country of Interest -->
+      <div class="field">
+        <label>Country of Interest</label>
+        <select name="country" required>
+          <option value="">Select…</option>
+          <option>United Arab Emirates</option>
+          <option>Jordan</option>
+          <option>Turkey</option>
+          <option>Malta</option>
+          <option>Greece</option>
+          <option>European Union</option>
+        </select>
+      </div>
+
+      <!-- Areas of Interest -->
+      <div class="field">
+        <label>Investment Area</label>
+        <div class="chips">
+          <label><input type="checkbox" name="interest" value="Palaces"> Palaces</label>
+          <label><input type="checkbox" name="interest" value="Islands"> Islands</label>
+          <label><input type="checkbox" name="interest" value="Yachts"> Yachts</label>
+          <label><input type="checkbox" name="interest" value="Jets"> Jets</label>
+          <label><input type="checkbox" name="interest" value="Residency"> Residency</label>
+          <label><input type="checkbox" name="interest" value="Citizenship"> Citizenship</label>
+        </div>
+      </div>
+
+      <!-- Budget -->
+      <div class="field">
+        <label>Budget Range (USD)</label>
+        <select name="budget" required>
+          <option value="">Select…</option>
+          <option>$50k – $100k</option>
+          <option>$100k – $250k</option>
+          <option>$250k – $500k</option>
+          <option>$500k – $1M</option>
+          <option>$1M – $5M</option>
+          <option>$5M+</option>
+        </select>
+      </div>
+
+      <!-- Timeline -->
+      <div class="field">
+        <label>Investment Timeline</label>
+        <select name="timeline" required>
+          <option value="">Select…</option>
+          <option>Immediate (0–30 days)</option>
+          <option>Near Term (1–3 months)</option>
+          <option>Mid Term (3–6 months)</option>
+          <option>Exploring (6+ months)</option>
+        </select>
+      </div>
+
+      <!-- Message -->
+      <div class="field span-2">
+        <label>Additional Notes</label>
+        <textarea name="message" rows="4" placeholder="Optional: describe your objectives…"></textarea>
+      </div>
+
+      <div class="field span-2 consent">
+        <label><input type="checkbox" name="consent" required> I confirm this inquiry is genuine and agree to private contact.</label>
+      </div>
+
+      <div class="actions span-2">
+        <button type="submit" class="mini-btn">Submit Secure Request</button>
+      </div>
+
+    </form>
+  </div>
+</section>
 
   <footer class="footer">
     <div class="wrap">
