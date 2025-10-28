@@ -154,32 +154,28 @@
       <small>© Dragon Global Wealth & Residency. All rights reserved.</small>
     </div>
   </footer>
-  <script>
+ <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const DURATION = 3000; // 3 ثوانٍ
+  const groups = Array.from(document.querySelectorAll('#markets .card .img'));
 
-  // اجمع كل مجموعات الصور داخل كل بطاقة
-  const groups = Array.from(document.querySelectorAll('.card .img'))
-    .map(box => {
-      const imgs = Array.from(box.querySelectorAll('img'));
-      if (imgs.length === 0) return null;
-      imgs.forEach((im, i) => im.classList.toggle('active', i === 0)); // أول صورة مفعلة
-      return { imgs, i: 0 };
-    })
-    .filter(Boolean);
+  // تهيئة: فعّل أول صورة بكل بطاقة
+  groups.forEach(g => {
+    const imgs = Array.from(g.querySelectorAll('img'));
+    if (imgs.length) imgs[0].classList.add('active');
+  });
 
-  if (groups.length === 0) return;
-
-  // حرّك كل البطاقات معًا
+  // تدوير كل البطاقات معًا كل 3 ثوانٍ
   setInterval(() => {
     groups.forEach(g => {
-      if (g.imgs.length < 2) return;
-      g.imgs[g.i].classList.remove('active');
-      g.i = (g.i + 1) % g.imgs.length;
-      g.imgs[g.i].classList.add('active');
+      const imgs = Array.from(g.querySelectorAll('img'));
+      if (!imgs.length) return;
+      const curr = g.querySelector('img.active');
+      let idx = curr ? imgs.indexOf(curr) : -1;
+      imgs.forEach(im => im.classList.remove('active'));
+      imgs[(idx + 1) % imgs.length].classList.add('active');
     });
-  }, DURATION);
+  }, 3000);
 });
-</script>
+</script> 
 </body>
 </html>
