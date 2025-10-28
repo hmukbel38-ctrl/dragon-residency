@@ -216,3 +216,20 @@ a{text-decoration:none;color:inherit}
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
+/* Fix card button */
+.card { text-align:center; }
+
+.card a.mini-btn{
+  display:block;
+  width:max-content;
+  margin:12px auto 0;
+  padding:12px 24px;
+  background:linear-gradient(135deg,#e6b962,#b88a28);
+  color:#fff !important;
+  font-weight:700;
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+  transition:transform .25s, box-shadow .25s;
+}
+.card a.mini-btn:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.18); }
