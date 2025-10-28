@@ -53,77 +53,44 @@ a{text-decoration:none;color:inherit}
 .section__title{margin:0 0 18px;font-size:22px}
 
 /* Cards row: mobile horizontal, desktop grid */
+/* Cards row ثابت ومتجاوب */
 .cards-row{
-  display:flex;
-  gap:14px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding-bottom:8px;
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  overflow:visible;
 }
 
-/* بطاقات العرض */
-.cards-row > .card {
-  min-width: 280px;
-  max-width: 320px;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-}
-
-/* تنسيق الصور داخل البطاقات */
-.card .img {
-  aspect-ratio: 16/11;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #eee;
-  margin-bottom: 10px;
-}
-
-.card .img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-@media (min-width:768px){
-  /* Cards Grid Layout */
-.cards-row{
-  display: grid;
-  gap: 16px;
-  overflow: hidden;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 10px 0;
-}
-
-/* Card */
-.card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  box-shadow:var(--shadow);
-  padding:12px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
+/* إطار الصورة داخل البطاقة */
+.card .img{
+  position:relative;
+  aspect-ratio:16/11;
   border-radius:12px;
-  margin-bottom:8px;
+  overflow:hidden;
+  background:#eee;
 }
 
+/* تراكب الصور فوق بعض والتحريك */
+.card .img img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity .6s ease;
+}
+.card .img img.active{
+  opacity:1;
+}
+
+/* عنوان ووصف البطاقة */
 .card h3{
-  margin:6px 0;
+  margin:8px 0 6px;
   font-size:16px;
-  text-align:center;
 }
-
 .card p{
   margin:0 0 10px;
-  font-size:14px;
   color:#444;
-  text-align:center;
+  font-size:14px;
 }
