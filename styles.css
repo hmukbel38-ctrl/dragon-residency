@@ -196,3 +196,23 @@ a{text-decoration:none;color:inherit}
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
+/* زر الكروت الذهبي */
+.mini-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #e6b962, #b88a28);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mini-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
