@@ -282,42 +282,31 @@ a{text-decoration:none;color:inherit}
   color: #444;
   margin-bottom: 20px;
 }
-/* Destinations Grid */
-.country-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  margin-top: 20px;
+/* Destinations grid 2x3 mini cards */
+.destinations-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:12px;
+  max-width:720px;
+  margin:0 auto;
 }
-
-.country-card {
-  text-align: center;
-  background: #fff;
-  padding: 24px 16px;
-  border-radius: 16px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media (min-width:768px){
+  .destinations-grid{ grid-template-columns:repeat(3, minmax(0,1fr)); max-width:980px; }
 }
-
-.country-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+.dest-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 12px;
+  text-align:center;
+  box-shadow:var(--shadow);
 }
-
-.flag {
-  font-size: 48px;
-  margin-bottom: 12px;
+.dest-card:hover{ border-color:var(--gold); }
+.flag{
+  display:inline-block;
+  font-size:28px;
+  margin-bottom:6px;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
 }
-
-.country-card h3 {
-  font-size: 18px;
-  margin: 8px 0;
-  font-weight: 600;
-}
-
-.country-card p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
+.dest-card h3{ margin:2px 0 4px; font-size:14px; }
+.dest-card p{ margin:0; font-size:12px; color:#555; }
