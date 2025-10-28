@@ -86,54 +86,44 @@ a{text-decoration:none;color:inherit}
 }
 
 @media (min-width:768px){
-  .cards-row{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-    overflow:visible;
-  }
-  .cards-row > .card{
-    min-width:unset;
-    max-width:unset;
-    flex:none;
-  }
-}
-/* Card */
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:12px}
-.card__img{aspect-ratio:16/11;border-radius:12px;overflow:hidden;margin-bottom:10px;background:#eee}
-.card h3{margin:6px 0 6px;font-size:16px}
-.card p{margin:0 0 10px;color:#444;font-size:14px}
-
-/* Blocks / Steps */
-.blocks{display:grid;gap:16px}
-@media (min-width:768px){.blocks{grid-template-columns:repeat(3,1fr)}}
-.block{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-
-.steps{display:grid;gap:16px}
-@media (min-width:768px){.steps{grid-template-columns:repeat(4,1fr)}}
-.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-.step span{display:inline-grid;place-content:center;width:28px;height:28px;border-radius:999px;background:#111;color:#fff;font-weight:700;margin-bottom:6px}
-
-/* Contact */
-.contact{display:grid;gap:12px;text-align:center}
-.contact .btn{justify-self:center}
-
-/* Footer */
-.footer{border-top:1px solid var(--line);padding:18px 0;background:#fafafa}
-.footer small{color:#555}
-/* Uniform card images */
-.cards .item .img{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;   /* 4:3 ثابت لكل الصور */
+  /* Cards Grid Layout */
+.cards-row{
+  display: grid;
+  gap: 16px;
   overflow: hidden;
-  border-radius: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 10px 0;
 }
-.cards .item .img img{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;     /* قص من الأطراف بدل ما تتمدد */
+
+/* Card */
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:8px;
+}
+
+.card h3{
+  margin:6px 0;
+  font-size:16px;
+  text-align:center;
+}
+
+.card p{
+  margin:0 0 10px;
+  font-size:14px;
+  color:#444;
+  text-align:center;
 }
