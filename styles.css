@@ -413,3 +413,12 @@ a{text-decoration:none;color:inherit}
     width: 100%;
   }
 }
+/* ✨ فاين فاصل ملكي فاخر */
+.section-divider {
+  width: 120px;
+  height: 3px;
+  margin: 40px auto;
+  background: linear-gradient(to right, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0.1));
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(212,175,55,0.6);
+}
