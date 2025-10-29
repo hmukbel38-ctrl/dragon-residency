@@ -403,6 +403,88 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script> 
- 
+<script>
+  // === CONFIG: ضع رابط الويب-آب هنا ===
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwrvdJRCg5qk4XCF7c20oEYhpBgImUrznJqGCgdtX-ms0MuEu3gbon-0rpHgYZ3EHMByQ/exec";
+
+  const form = document.getElementById('leadForm');
+  const note = document.getElementById('formNote');
+  const btn  = document.getElementById('sendBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // تحقق الحد الأدنى للميزانية
+    const budget = Number(form.budget.value || 0);
+    if (budget < 50000) {
+      note.textContent = "Minimum budget is 50,000 USD.";
+      note.style.color = "#b00";
+      return;
+    }
+
+    // جمع البيانات
+    const payload = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      country: form.country.value,
+      budget: budget,
+      interest: form.interest.value,
+      contact_method: form.contact_method.value,
+      message: form.message.value.trim(),
+      timestamp: new Date().toISOString()
+    };
+
+    // إيقاف الزر مؤقتًا
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    try {
+      // ملاحظة: إذا كان الويب-آب يعيد JSON مع CORS مضبوط فستعمل كما هي.
+      // لو لم يكن، غيّر mode إلى 'no-cors' وسنعتبر الإرسال ناجحًا.
+      const res = await fetch(WEB_APP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) throw new Error("HTTP " + res.status);
+
+      // حاول قراءة الرد إن توفر
+      let ok = true;
+      try {
+        const data = await res.json();
+        ok = data && (data.status === "ok" || data.result === "ok");
+      } catch (_) { /* تجاهل */ }
+
+      if (ok) {
+        note.textContent = "Submitted. We will contact you shortly.";
+        note.style.color = "#0a0";
+        form.reset();
+      } else {
+        throw new Error("Service response not ok");
+      }
+    } catch (err) {
+      // خيار احتياطي إذا كان الويب-آب بلا CORS: جرّب إرسال no-cors
+      try {
+        await fetch(WEB_APP_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        note.textContent = "Submitted. If you don't get a reply, contact us by email.";
+        note.style.color = "#0a0";
+        form.reset();
+      } catch (e2) {
+        note.textContent = "Send failed. Try again or contact us by email.";
+        note.style.color = "#b00";
+      }
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Submit Inquiry";
+    }
+  });
+</script> 
 </body>
 </html>
