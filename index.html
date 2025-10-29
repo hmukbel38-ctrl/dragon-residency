@@ -436,5 +436,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script> 
+  <script>
+const ENDPOINT = 'YOUR_WEB_APP_URL'; // رابط Web App من Apps Script
+
+document.getElementById('leadForm')?.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+
+  const f = e.target;
+  const payload = {
+    name: f.name?.value?.trim(),
+    email: f.email?.value?.trim(),
+    phone: f.phone?.value?.trim(),
+    country: f.country?.value?.trim(),
+    budget: f.budget?.value?.trim(),
+    interest: f.interest?.value?.trim(),
+    message: f.message?.value?.trim()
+  };
+
+  try{
+    // لتجنب مشاكل CORS نستخدم no-cors ولا نعتمد على الرد
+    await fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    alert('تم إرسال طلبك. سنعاود التواصل قريبًا.');
+    f.reset();
+  }catch(err){
+    alert('تعذّر الإرسال. جرّب لاحقًا.');
+    console.error(err);
+  }
+});
+</script>
 </body>
 </html>
