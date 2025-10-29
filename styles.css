@@ -511,3 +511,37 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(180deg,#f1e5a6,#d4bd63);color:#332b00;font-weight:600
 }
 .btn.gold:hover{filter:brightness(.98)}
+/* Luxe contact */
+.section__lead{margin-top:-6px;margin-bottom:18px;color:#555;font-size:14px}
+.contact-form.luxe{
+  max-width:960px;margin:0 auto;padding:22px 20px;
+  background:linear-gradient(180deg,#fff,#fffef6);
+  border:1px solid rgba(212,175,55,.35); border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06), 0 0 18px rgba(212,175,55,.18);
+}
+.contact-form .grid{
+  display:grid;grid-template-columns:repeat(2,minmax(240px,1fr));gap:16px 20px
+}
+.contact-form .grid .span-2{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:8px}
+.field span{font-size:13px;color:#222}
+.control{
+  width:100%;padding:12px 12px;border:1px solid #eadfb5;border-radius:12px;
+  background:#fff;font-size:14px;outline:0;transition:border-color .2s, box-shadow .2s
+}
+.control:focus{border-color:#d4af37; box-shadow:0 0 0 3px rgba(212,175,55,.22)}
+textarea.control{min-height:110px;resize:vertical}
+
+.btn-gold{
+  margin-top:14px;display:inline-block;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;
+  background:linear-gradient(135deg,#f1e5a6,#d4af37);color:#312600;font-weight:700;letter-spacing:.2px
+}
+.btn-gold:hover{filter:brightness(.98)}
+.privacy-note{font-size:12px;color:#666;margin-top:10px}
+
+@media(max-width:768px){
+  .contact-form .grid{grid-template-columns:1fr}
+}
+
+/* Thanks section */
+.thanks.hidden{display:none}
