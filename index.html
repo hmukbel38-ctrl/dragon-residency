@@ -25,7 +25,7 @@
   <header class="header">
     <div class="wrap nav">
       <a class="brand" href="#"><img src="assets/Logo.PNG" alt="Dragon" /></a>
-     <nav id="site-nav" class="menu">
+    <nav class="menu">
         <a href="#advantage">The Dragon Advantage</a>
         <a href="#about">About</a>
         <a href="#markets">Markets</a>
@@ -495,20 +495,22 @@ document.querySelector("form").addEventListener("submit", async function(e) {
 });
 </script>
 <script>
-let lastY = 0;
-const nav = document.getElementById('site-nav');
+(function(){
+  const header = document.querySelector('.header');
+  let last = 0, ticking = false;
 
-window.addEventListener('scroll', () => {
-  const y = window.scrollY || document.documentElement.scrollTop;
-
-  if (y > lastY && y > 80) {      // نزول
-    nav.classList.add('nav--hidden');
-  } else {                        // صعود
-    nav.classList.remove('nav--hidden');
+  function onScroll(){
+    const y = window.scrollY || document.documentElement.scrollTop;
+    if(y > last && y > 80){ header.classList.add('nav--hidden'); }
+    else { header.classList.remove('nav--hidden'); }
+    last = y <= 0 ? 0 : y;
+    ticking = false;
   }
 
-  lastY = y <= 0 ? 0 : y;
-});
-</script>  
+  window.addEventListener('scroll', () => {
+    if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+})();
+</script>
 </body>
 </html>
