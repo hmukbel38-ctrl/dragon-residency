@@ -500,25 +500,18 @@ a{text-decoration:none;color:inherit}
 
 /* CTA تحت الشبكة */
 #how .mini-btn{ margin-top:18px; }
-/* Contact — layout */
-.contact .wrap{max-width:980px;margin-inline:auto}
-.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media (max-width:768px){.contact-grid{grid-template-columns:1fr}}
-
-.control{display:flex;flex-direction:column;gap:6px}
-.control label{font-size:13px;color:#333}
-.control small{color:#666}
-
-.input, .select, .textarea{
-  width:100%;padding:10px 12px;border:1px solid #eadfb5;
-  border-radius:12px;background:#fff;outline:0;
-  box-shadow:0 1px 0 rgba(17,18,22,.04)
+/* Contact form */
+.contact .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:12px}
+.contact .fld{display:flex;flex-direction:column;gap:6px}
+.contact .fld input,
+.contact .fld select,
+.contact .fld textarea{
+  padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff
 }
-.input:focus, .select:focus, .textarea:focus{
-  border-color:#d4bd63; box-shadow:0 0 0 3px rgba(212,189,99,.25)
-}
-.textarea{min-height:110px;resize:vertical}
-
+.contact .fld--full{grid-column:1 / -1}
+.form-status{margin-top:10px;font-weight:600}
+.form-status.ok{color:#1a7f37}
+.form-status.err{color:#b00020}
 .badge{
   display:inline-grid;place-content:center;width:28px;height:28px;border-radius:999px;
   border:1px solid #eadfb5;background:linear-gradient(#fff,#f9f7ef)
