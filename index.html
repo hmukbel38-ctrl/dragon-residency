@@ -420,27 +420,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 3000);
 });
 </script> 
-<script>
-  // يمنع الضغط المزدوج ويعرض حالة إرسال أنيقة
-  (function(){
-    const form = document.getElementById('leadForm');
-    const status = document.getElementById('formStatus');
-    const iframe = document.getElementById('hidden_iframe');
 
-    form.addEventListener('submit', function(){
-      status.className = 'form-status';
-      status.textContent = 'Sending…';
-      form.querySelector('button[type="submit"]').disabled = true;
-    });
-
-    iframe.addEventListener('load', function(){
-      // يتم استدعاؤه بعد استلام FormSubmit للطلب
-      status.className = 'form-status ok';
-      status.textContent = 'Request received. We will contact you shortly.';
-      form.reset();
-      form.querySelector('button[type="submit"]').disabled = false;
-    });
-  })();
-</script> 
 </body>
 </html>
