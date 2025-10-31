@@ -543,5 +543,40 @@ document.querySelector("form").addEventListener("submit", async function(e) {
   }
 }
 </style> 
+  <script>
+  (function () {
+    const v = document.getElementById('heroVideo');
+    if (!v) return;
+
+    // إجبار الخصائص اللازمة لتجاوز حظر iOS
+    v.muted = true;
+    v.playsInline = true;
+    v.setAttribute('muted', '');            // لبعض متصفحات iOS
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
+
+    const tryPlay = () => v.play().catch(() => {
+      // أعد المحاولة بعد أول تفاعل تمرير بسيط
+      const onFirstTouch = () => {
+        v.play().finally(() => window.removeEventListener('touchstart', onFirstTouch, {passive:true}));
+      };
+      window.addEventListener('touchstart', onFirstTouch, {passive:true, once:true});
+    });
+
+    // شغّل عند الجاهزية أو عند التحميل
+    if (v.readyState >= 2) tryPlay();
+    else {
+      v.addEventListener('loadeddata', tryPlay, {once:true});
+      v.load();
+    }
+
+    // ضمان الاستمرار في اللوب
+    v.addEventListener('ended', () => v.play());
+    // أعد المحاولة عند فقدان التركيز/العودة
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) v.play().catch(()=>{});
+    });
+  })();
+</script>
 </body>
 </html>
