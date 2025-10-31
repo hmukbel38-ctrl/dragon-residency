@@ -510,5 +510,29 @@ document.querySelector("form").addEventListener("submit", async function(e) {
   }, {passive:true});
 })();
 </script>
+  <div id="rotate-notice">
+  <p>من فضلك اقلب الهاتف للوضع الأفقي لعرض أفضل</p>
+</div>
+
+<style>
+#rotate-notice {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #d4af37;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+@media screen and (orientation: portrait) {
+  #rotate-notice {
+    display: flex;
+  }
+}
+</style>
 </body>
 </html>
