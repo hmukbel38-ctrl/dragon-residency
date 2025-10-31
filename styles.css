@@ -32,7 +32,21 @@ a{text-decoration:none;color:inherit}
 .brand img{width:44px;height:44px;border-radius:8px}
 .menu{display:flex;flex-wrap:wrap;gap:18px}
 .menu a{padding:6px 4px}
+/* Nav hide-on-scroll */
+#site-nav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  transform: translateY(0);
+  transition: transform .4s ease;
+}
 
+/* تعويض ارتفاع النافبار */
+:root{ --nav-h: 72px; }
+body{ padding-top: var(--nav-h); }
+
+/* حالة الإخفاء */
+#site-nav.nav--hidden{ transform: translateY(-110%); }
 /* Hero */
 .hero{position:relative;background:#0a0a0a;color:#fff;padding:56px 0;overflow:hidden}
 .hero__content{position:relative;z-index:2}
