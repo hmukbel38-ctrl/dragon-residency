@@ -46,7 +46,33 @@ a{text-decoration:none;color:inherit}
 .btn{display:inline-block;padding:14px 18px;border-radius:999px;background:linear-gradient(#f7d774,#d4af37);color:#111;font-weight:700;box-shadow:var(--shadow)}
 .btn--outline{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff}
 .btn--small{padding:10px 12px;border-radius:12px}
+/* ====== Golden Button ====== */
+:root {
+  --gold: #c9a227;
+  --gold-deep: #a98c1f;
+  --gold-lite: #e9d78f;
+}
 
+.btn--gold {
+  background: linear-gradient(180deg, var(--gold-lite), var(--gold));
+  color: #1a1a1a;
+  border: 1px solid var(--gold-deep);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(201, 162, 39, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn--gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(201, 162, 39, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.btn--gold:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(201, 162, 39, 0.25);
+}
 /* Sections */
 .section{padding:40px 0}
 .section.muted{background:var(--muted)}
