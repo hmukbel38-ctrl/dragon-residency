@@ -119,6 +119,22 @@ body{ padding-top: var(--nav-h); }
   padding-bottom: 140px;
   text-align: center;
 }
+.hero h1 {
+  color: #d4af37;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  color: #f2e6c4;
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 20px auto 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
 @media (max-width: 768px){
   .hero__video { display: none; }
   .hero__video-bg {
