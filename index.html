@@ -273,75 +273,79 @@
     <a class="mini-btn" href="#contact">Start Your Inquiry</a>
   </div>
 </section>
-<section id="contact" class="section">
-  <div class="wrap">
+<section id="contact" class="section muted">
+  <div class="wrap contact">
     <h2 class="section__title">Start Your Private Inquiry</h2>
-    <p class="section__lead">Discreet. Curated. Priority response within 24h.</p>
 
-    <form class="contact-form luxe" action="https://formsubmit.co/dragonglobalwealth@gmail.com" method="POST">
-      <!-- إعدادات FormSubmit -->
-      <input type="hidden" name="_subject" value="Dragon Global • New Private Inquiry">
-      <input type="hidden" name="_template" value="box">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_autoresponse" value="Thank you for your private inquiry. Our concierge team will contact you shortly.">
-      <input type="hidden" name="_next" value="https://your-domain.com/#thanks">
+    <!-- hidden iframe to block redirect -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <form id="leadForm"
+          action="https://formsubmit.co/dragonglobalwealth@gmail.com"
+          method="POST"
+          target="hidden_iframe">
+
+      <!-- FormSubmit options -->
+      <input type="hidden" name="_subject" value="New Dragon Inquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha"  value="false">
+      <input type="hidden" name="_autoresponse"
+             value="Thank you. We received your request and will contact you shortly.">
+      <!-- honeypot -->
       <input type="text" name="_honey" style="display:none">
 
-      <div class="grid">
-        <label class="field">
-          <span>Full Name</span>
-          <input class="control" type="text" name="name" required placeholder="Your full name">
+      <div class="grid2">
+        <label class="fld">
+          <span>Name</span>
+          <input name="name" type="text" required>
         </label>
 
-        <label class="field">
+        <label class="fld">
           <span>Email</span>
-          <input class="control" type="email" name="email" required placeholder="name@email.com">
+          <input name="email" type="email" required>
         </label>
 
-        <label class="field">
+        <label class="fld">
           <span>Phone (WhatsApp)</span>
-          <input class="control" type="tel" name="phone" required placeholder="+971 50 000 0000">
+          <input name="phone" type="tel" required>
         </label>
 
-        <label class="field">
-          <span>Country of Residence</span>
-          <input class="control" type="text" name="country" required placeholder="UAE, Jordan, Turkey…">
+        <label class="fld">
+          <span>Country</span>
+          <input name="country" type="text" placeholder="Jordan, UAE, Turkey..." required>
         </label>
 
-        <label class="field">
-          <span>Budget (USD)</span>
-          <select class="control" name="budget" required>
-            <option value="" disabled selected>Select budget</option>
-            <option>$50,000 – $99,999</option>
-            <option>$100,000 – $249,999</option>
-            <option>$250,000 – $499,999</option>
-            <option>$500,000 – $999,999</option>
-            <option>$1,000,000 – $2,999,999</option>
-            <option>$3,000,000+</option>
+        <label class="fld">
+          <span>Budget</span>
+          <select name="budget" required>
+            <option value="50k–100k">50,000–100,000</option>
+            <option value="100k–250k">100,000–250,000</option>
+            <option value="250k–500k">250,000–500,000</option>
+            <option value="500k–1M">500,000–1,000,000</option>
+            <option value="1M+">1,000,000+</option>
           </select>
         </label>
 
-        <label class="field">
+        <label class="fld">
           <span>Interest</span>
-          <select class="control" name="interest" required>
-            <option value="" disabled selected>Select</option>
-            <option>Golden Residency</option>
+          <select name="interest" required>
+            <option>Residency</option>
             <option>Citizenship</option>
-            <option>Private Palaces & Estates</option>
-            <option>Private Islands</option>
-            <option>Superyachts & Jets</option>
-            <option>Other</option>
+            <option>Real Estate</option>
+            <option>Yachts</option>
+            <option>Islands & Mega Assets</option>
+            <option>Private Jets</option>
           </select>
         </label>
 
-        <label class="field span-2">
+        <label class="fld fld--full">
           <span>Message</span>
-          <textarea class="control" name="message" rows="4" required placeholder="Brief requirements or property specs…"></textarea>
+          <textarea name="message" rows="4" placeholder="Tell us what you need…" required></textarea>
         </label>
       </div>
 
-      <button class="btn-gold" type="submit">Send Secure Inquiry</button>
-      <p class="privacy-note">By submitting, you agree to private and secure processing of your data.</p>
+      <button type="submit" class="btn">Send Secure Request</button>
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
     </form>
   </div>
 </section>
@@ -382,35 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 3000);
 });
 </script> 
- <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // الميزانية
-  const budget = document.getElementById('budget');
-  const out = document.getElementById('budgetOut');
-  if (budget && out){
-    const fmt = v => new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(v);
-    const sync = () => out.value = '$ ' + fmt(budget.value);
-    budget.min = 50000; budget.max = 5000000; budget.step = 5000;
-    budget.addEventListener('input', sync); sync();
-  }
 
-  // تحقّق بسيط قبل الإرسال
-  const form = document.getElementById('contactForm');
-  if(form){
-    form.addEventListener('submit', (e)=>{
-      const req = ['fullName','emailOrPhone','country','interest'];
-      for(const id of req){
-        const el = form.querySelector('[name="'+id+'"]') || document.getElementById(id);
-        if(!el) continue;
-        if((el.type==='checkbox' || el.type==='radio')){
-          const any = form.querySelectorAll('[name="'+id+'"]:checked').length>0;
-          if(!any){alert('اكمل الحقول المطلوبة.'); e.preventDefault(); return;}
-        }else if(!el.value.trim()){alert('اكمل الحقول المطلوبة.'); e.preventDefault(); return;}
-      }
-    });
-  }
-});
-</script> 
  
 </body>
 </html>
