@@ -17,14 +17,7 @@ a{text-decoration:none;color:inherit}
 
 .wrap{width:min(1160px,92%);margin-inline:auto}
 
-/* Topbar */
-.topbar{border-bottom:1px solid var(--line);background:#fcfcfe}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:8px}
-.mini-brand{display:flex;align-items:center;gap:10px}
-.mini-brand img{width:28px;height:28px;border-radius:6px}
-.mini-brand span{font-weight:700}
-.mini-contacts a{color:#333;margin-left:14px}
-.mini-contacts a:hover{color:#000}
+
 
 /* Header/Nav */
 .header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
