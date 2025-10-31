@@ -494,6 +494,21 @@ document.querySelector("form").addEventListener("submit", async function(e) {
   }
 });
 </script>
- 
+<script>
+let lastY = 0;
+const nav = document.getElementById('site-nav');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY || document.documentElement.scrollTop;
+
+  if (y > lastY && y > 80) {      // نزول
+    nav.classList.add('nav--hidden');
+  } else {                        // صعود
+    nav.classList.remove('nav--hidden');
+  }
+
+  lastY = y <= 0 ? 0 : y;
+});
+</script>  
 </body>
 </html>
