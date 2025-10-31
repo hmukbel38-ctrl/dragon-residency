@@ -25,6 +25,24 @@ a{text-decoration:none;color:inherit}
 .brand img{width:44px;height:44px;border-radius:8px}
 .menu{display:flex;flex-wrap:wrap;gap:18px}
 .menu a{padding:6px 4px}
+.nav-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.nav-contacts a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-contacts a:hover {
+  color: #d4af37;
+}
 
 /* Nav hide on scroll */
 .header{
