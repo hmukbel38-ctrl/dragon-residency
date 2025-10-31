@@ -65,37 +65,45 @@ body{ padding-top: var(--nav-h); }
   position: relative;
   background: #0a0a0a;
   color: #fff;
-  padding: 60px 0 80px;
+  padding: 100px 0;
   overflow: hidden;
   text-align: center;
 }
 
+/* إطار الفيديو الذهبي مع انعكاس متحرك */
 .hero__video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 60px;
-  width: 90%;
-  max-width: 1100px;
-  border: 3px solid #d4af37;
-  border-radius: 20px;
-  box-shadow: 0 0 35px rgba(212, 175, 55, 0.4);
+  position: relative;
+  width: 85%;
+  max-width: 780px;
+  margin: 0 auto;
+  border: 3px solid transparent;
+  border-radius: 18px;
   overflow: hidden;
-  background: #000;
+  background: linear-gradient(135deg, #a67c00, #d4af37, #f7d774, #d4af37, #a67c00);
+  background-size: 300% 300%;
+  animation: goldenShine 6s linear infinite;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.45), 0 0 80px rgba(212, 175, 55, 0.15);
 }
 
+/* حجم الفيديو الصغير */
 .hero__video {
   width: 100%;
-  height: 520px;
+  height: 290px;
   object-fit: cover;
-  filter: brightness(0.9);
+  filter: brightness(0.75);
 }
 
+/* النص فوق الفيديو */
 .hero__content {
-  max-width: 900px;
-  margin: 0 auto;
-  color: #f5e7b2;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  width: 90%;
+  max-width: 750px;
+  animation: fadeIn 1.6s ease-in-out;
 }
 
 .hero__content .badge {
@@ -103,36 +111,42 @@ body{ padding-top: var(--nav-h); }
   font-size: 14px;
   letter-spacing: 1px;
   background: rgba(255, 255, 255, 0.1);
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: #fff;
+  backdrop-filter: blur(6px);
 }
 
+/* النص الذهبي الفخم */
 .hero__content h1 {
-  color: #d4af37;
-  font-size: 48px;
+  color: #f7d774;
+  font-size: 40px;
   font-weight: 800;
-  margin: 0 0 15px;
+  margin: 0 0 12px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  animation: goldGlow 3s infinite alternate ease-in-out;
 }
 
 .hero__content p {
-  color: #f2e6c4;
-  font-size: 18px;
-  margin-bottom: 28px;
+  color: #f7f1cf;
+  font-size: 17px;
+  margin-bottom: 26px;
+  line-height: 1.6;
 }
 
 .hero__actions {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
 .hero__actions .btn {
   background: linear-gradient(90deg, #f7d774, #d4af37);
   color: #111;
-  padding: 14px 22px;
+  padding: 11px 20px;
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
@@ -140,8 +154,8 @@ body{ padding-top: var(--nav-h); }
 }
 
 .hero__actions .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
 }
 
 .hero__actions .btn-outline {
@@ -153,6 +167,58 @@ body{ padding-top: var(--nav-h); }
 .hero__actions .btn-outline:hover {
   background: #d4af37;
   color: #111;
+}
+
+/* تأثير الإطار المتوهّج */
+@keyframes goldenShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* حركة دخول ناعمة */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* وهج ذهبي للنص */
+@keyframes goldGlow {
+  from {
+    text-shadow: 0 0 10px #d4af37, 0 0 30px #d4af37;
+  }
+  to {
+    text-shadow: 0 0 20px #f7d774, 0 0 40px #f7d774;
+  }
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .hero__video-container {
+    width: 90%;
+    max-width: 95%;
+  }
+  .hero__video {
+    height: 220px;
+  }
+  .hero__content h1 {
+    font-size: 30px;
+  }
+  .hero__content p {
+    font-size: 15px;
+  }
 }
 
 /* Buttons */
